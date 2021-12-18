@@ -17,13 +17,15 @@ xfconf-query -c xfwm4 -p /general/theme -s "Qogir-win-dark"
 xfconf-query -c xsettings -p /Net/ThemeName -s "Qogir-win-dark"
 
 
-# ***TITLEBAR & MENUBAR***
+# *** DESKTOP ENVIRONMENT LAYOUT ***
 #tell xfconf to arrange the titlebar buttons in the right order
 xfconf-query -c xfwm4 -p /general/button_layout -s "O|HMC"
 
 #hide menu bar in thunar file manager
 xfconf-query -c thunar -p /last-menubar-visible -s false
 
+#effectively disable workspaces entirely
+xfconf-query -c xfwm4 -p /general/workspace_count -s 1
 
 # ***TASKBAR***
 #add the stretch repo and update apt package cache if it isn't already present
