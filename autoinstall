@@ -6,6 +6,7 @@
 
 # *** XFCE KEYBOARD SHORTCUTS ***
 xfconf-query -c xfce4-keyboard-shortcuts -p /commands/custom/\<Primary\>\<Alt\>t -t string -n -s "xfce4-terminal"
+xfconf-query -c xfce4-keyboard-shortcuts -p /commands/custom/Super_L -t string -n -s "xfce4-popup-whiskermenu"
 
 # ***THEME***
 #install windows-like dark theme to global themes directory so all users can benefit
