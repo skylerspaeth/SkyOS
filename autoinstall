@@ -16,6 +16,9 @@ sudo tar xzf Qogir-win-dark.tar.gz -C /usr/share/themes/
 xfconf-query -c xfwm4 -p /general/theme -s "Qogir-win-dark"
 xfconf-query -c xsettings -p /Net/ThemeName -s "Qogir-win-dark"
 
+#apply icon theme
+wget -qO- https://raw.githubusercontent.com/PapirusDevelopmentTeam/papirus-icon-theme/master/install.sh | \
+DESTDIR="$HOME/.icons" sh && xfconf-query -c xsettings -p /Net/IconThemeName -s "Papirus-Dark"
 
 # *** DESKTOP ENVIRONMENT LAYOUT ***
 #tell xfconf to arrange the titlebar buttons in the right order
