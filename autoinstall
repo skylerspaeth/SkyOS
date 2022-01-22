@@ -61,7 +61,7 @@ xfconf-query -c xfce4-panel -p /plugins/$CLOCKPLUGINID/tooltip-format -s "%A %d 
 #taskbar layout customization using xfce4-panel-profiles
 sudo apt install intltool
 XFPSW="xfce4-panel-profiles-1.0.10"
-TBAR="skyos-taskbar-1.0"
+TBAR="skyos-taskbar"
 wget https://archive.xfce.org/src/apps/xfce4-panel-profiles/1.0/$XFPSW.tar.bz2
 bzip2 -d $XFPSW.tar.bz2
 tar xvf $XFPSW.tar
@@ -70,7 +70,7 @@ cd $XFPSW
 make
 sudo make install
 cd .. && rm -rf $XFPSW.tar $XFPSW.tar.bz2 $XFPSW
-cp skyos-taskbar.txt config.txt
+cp skyos-taskbar.cfg config.txt
 tar cvf $TBAR.tar config.txt
 xfce4-panel-profiles load $TBAR.tar && rm $TBAR.tar config.txt
 
