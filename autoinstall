@@ -20,6 +20,17 @@ xfconf-query -c xsettings -p /Net/ThemeName -s "Qogir-win-dark"
 wget -qO- https://raw.githubusercontent.com/PapirusDevelopmentTeam/papirus-icon-theme/master/install.sh | \
 DESTDIR="$HOME/.icons" sh && xfconf-query -c xsettings -p /Net/IconThemeName -s "Papirus-Dark"
 
+# *** DESKTOP WALLPAPERS ***
+#copy wallpapers outside of repo
+BGDIR="/usr/share/wallpapers/SkyOS/contents/images"
+BGDEFAULT="$BGDIR/city17-bg1.jpg"
+sudo mkdir -p $BGDIR
+sudo cp res/wallpapers/* $BGDIR
+
+xfconf-query --channel xfce4-desktop --list | grep last-image | while read PROPPATH; do
+  xfconf-query --channel xfce4-desktop --property $PROPPATH --set $BGDEFAULT
+done
+
 # *** DESKTOP ENVIRONMENT LAYOUT ***
 #tell xfconf to arrange the titlebar buttons in the right order
 xfconf-query -c xfwm4 -p /general/button_layout -s "O|HMC"
