@@ -46,10 +46,10 @@ xfconf-query -c xfwm4 -p /general/workspace_count -s 1
 grep "deb http://deb.debian.org/debian stretch main" /etc/apt/sources.list ||
 printf "\n# oldstable repo for stretch packages (added by SkyOS install script)\n\
 deb http://deb.debian.org/debian stretch main\n" | sudo tee -a /etc/apt/sources.list > /dev/null
-sudo apt update
+sudo apt-get update
 
 #install dockbarx dependencies, some of which require above repo
-sudo apt install -y gcc zeitgeist python-pip python-dbus python-wnck python-pil python-keybinder python-xlib python-gconf \
+sudo apt-get install -y gcc zeitgeist python-pip python-dbus python-wnck python-pil python-keybinder python-xlib python-gconf \
 valac libgtk2.0-dev build-essential xfce4-panel-dev libxfce4panel-2.0-4 libxfce4panel-2.0-dev libxfconf-0-2 libxfconf-0-dev
 #dropped gtk2.0 from above because it is taken as a regex
 
@@ -70,7 +70,7 @@ xfconf-query -c xfce4-panel -p /plugins/$CLOCKPLUGINID/digital-format -s "%a %b 
 xfconf-query -c xfce4-panel -p /plugins/$CLOCKPLUGINID/tooltip-format -s "%A %d %B %Y @ %T"
 
 #taskbar layout customization using xfce4-panel-profiles
-sudo apt install intltool
+sudo apt-get install intltool
 XFPSW="xfce4-panel-profiles-1.0.10"
 TBAR="skyos-taskbar"
 wget https://archive.xfce.org/src/apps/xfce4-panel-profiles/1.0/$XFPSW.tar.bz2
