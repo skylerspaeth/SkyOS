@@ -23,7 +23,7 @@ DESTDIR="$HOME/.icons" sh && xfconf-query -c xsettings -p /Net/IconThemeName -s 
 # *** DESKTOP WALLPAPERS ***
 #copy wallpapers outside of repo
 BGDIR="/usr/share/wallpapers/SkyOS/contents/images"
-BGDEFAULT="$BGDIR/city17-bg2.jpg"
+BGDEFAULT="$BGDIR/city17-bg1.jpg"
 sudo mkdir -p $BGDIR
 sudo cp res/wallpapers/* $BGDIR
 
@@ -84,6 +84,10 @@ cd .. && rm -rf $XFPSW.tar $XFPSW.tar.bz2 $XFPSW
 cp skyos-taskbar.cfg config.txt
 tar cvf $TBAR.tar config.txt
 xfce4-panel-profiles load $TBAR.tar && rm $TBAR.tar config.txt
+
+#change start icon to distro logo
+sed -i "/^button-icon=/c\button-icon=flameshot" $HOME/.config/xfce4/panel/whiskermenu-1.rc
+xfce4-panel -r
 
 # ***TERMINAL THEMING***
 #terminalrc location as a variable to eliminate repetition
