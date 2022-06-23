@@ -1,4 +1,6 @@
 # To-do list
+- Use Kora icon theme
+- Switch to a Fedora 36 base due to newer packages
 - Set pinned icons for DockBarX
 - Change DockBarX theme to "Jonatheme"
 - Customize lightdm
