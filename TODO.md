@@ -1,6 +1,8 @@
 # To-do list
 - Use Kora icon theme
 - Switch to a Fedora 36 base due to newer packages
+  - Install `sudo dnf install xfce4-volumed` to get GMMK Pro volume knob working out of box
+  - Try and find a way to get DockBarX installed easily in Fedora
 - Set pinned icons for DockBarX
 - Change DockBarX theme to "Jonatheme"
 - Customize lightdm
