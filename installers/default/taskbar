@@ -1,21 +1,3 @@
 #!/bin/bash
 
-# ultimately this gets moved to the script that calls each installer
-export SKYOS_BUILD_PATH=/tmp/skyos
-mkdir /tmp/skyos
-
-# xfce4 docklike plugin
-cd $SKYOS_BUILD_PATH
-sudo dnf install -y xfce4-dev-tools libtool libX11-devel gtk3-devel libwnck3-devel libxfce4ui-devel xfce4-panel-devel g++
-git clone https://gitlab.xfce.org/panel-plugins/xfce4-docklike-plugin.git && cd xfce4-docklike-plugin
-
-./autogen.sh
-make
-sudo make install
-
-# xfce4 panel profiles
-cd $SKYOS_BUILD_PATH
-git clone https://gitlab.xfce.org/apps/xfce4-panel-profiles.git && cd xfce4-panel-profiles
-./autogen.sh
-make
-sudo make install
+sudo dnf install -y xfce4-docklike-plugin xfce4-panel-profiles
