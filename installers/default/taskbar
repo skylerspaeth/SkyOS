@@ -1,9 +1,15 @@
 #!/bin/bash
+
+# xfce4 docklike plugin
 sudo dnf install -y xfce4-dev-tools libtool libX11-devel gtk3-devel libwnck3-devel libxfce4ui-devel xfce4-panel-devel g++
+git clone https://gitlab.xfce.org/panel-plugins/xfce4-docklike-plugin.git && cd xfce4-docklike-plugin
 
-git clone https://gitlab.xfce.org/panel-plugins/xfce4-docklike-plugin.git
-cd xfce4-docklike-plugin
+./autogen.sh
+make
+sudo make install
 
+# xfce4 panel profiles
+git clone https://gitlab.xfce.org/apps/xfce4-panel-profiles.git && cd xfce4-panel-profiles
 ./autogen.sh
 make
 sudo make install
