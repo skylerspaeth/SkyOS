@@ -13,7 +13,7 @@
 	- Discord
 	- goregion
   - Lossless Cut:
-  ```bash
+```bash
 skylerspaeth@[fedora-desktop] ~ % cat /usr/share/applications/Lossless-Cut.desktop
 [Desktop Entry]
 Name=Lossless Cut
@@ -24,3 +24,4 @@ Terminal=false
 Encoding=UTF-8
 Categories=Utility;
 ```
+- Status Tray Items -> Behavior -> Square Items - figure that out in xfconf-query
