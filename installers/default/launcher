@@ -1,0 +1,9 @@
+#!/bin/bash
+sudo dnf install -y xfce4-dev-tools libtool
+
+git clone https://gitlab.xfce.org/panel-plugins/xfce4-docklike-plugin.git
+cd xfce4-docklike-plugin
+
+./autogen.sh
+make
+sudo make install
