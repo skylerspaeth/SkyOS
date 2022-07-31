@@ -36,3 +36,4 @@ Categories=Utility;
 export SKYOS_BUILD_PATH=/tmp/skyos
 mkdir $SKYOS_BUILD_PATH
 ```
+- Make checkboxes checkboxes again (not radios!) - seems like Orchis doesn't agree
