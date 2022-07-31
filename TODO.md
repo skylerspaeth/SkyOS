@@ -25,3 +25,7 @@ Encoding=UTF-8
 Categories=Utility;
 ```
 - Status Tray Items -> Behavior -> Square Items - figure that out in xfconf-query
+- https://gitlab.xfce.org/xfce/xfwm4/-/issues/559
+- https://github.com/chjj/compton/issues/197
+- https://ask.fedoraproject.org/t/really-long-boot-time/3242
+- https://github.com/hanschen/ksuperkey
