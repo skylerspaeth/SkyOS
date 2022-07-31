@@ -31,3 +31,8 @@ Categories=Utility;
 - https://github.com/hanschen/ksuperkey
 - Prevent login screen from showing up on cursor screen, rather stay on main display
 - Bind Win + L to xflock4
+- Add to script that calls each installer:
+```bash
+export SKYOS_BUILD_PATH=/tmp/skyos
+mkdir $SKYOS_BUILD_PATH
+```
