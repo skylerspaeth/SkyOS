@@ -29,3 +29,5 @@ Categories=Utility;
 - https://github.com/chjj/compton/issues/197
 - https://ask.fedoraproject.org/t/really-long-boot-time/3242
 - https://github.com/hanschen/ksuperkey
+- Prevent login screen from showing up on cursor screen, rather stay on main display
+- Bind Win + L to xflock4
