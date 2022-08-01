@@ -1,0 +1,9 @@
+#!/bin/bash
+
+gclonecd https://github.com/vinceliuice/Orchis-theme.git
+
+SKYOS_THEME="SkyOS-Orchis"
+./install.sh --name $SKYOS_THEME --color dark --size compact --theme purple
+
+xfconf-query -c xsettings -p /Net/ThemeName -s $SKYOS_THEME
+xfconf-query -c xfwm4 -p /general/theme -s $SKYOS_THEME
