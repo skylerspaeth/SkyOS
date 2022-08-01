@@ -1,7 +1,9 @@
 #!/bin/bash
 
 export SKYOS_BUILD_PATH=/tmp/skyos
-mkdir $SKYOS_BUILD_PATH
+# ensure the directory is empty
+rm -rf $SKYOS_BUILD_PATH/*
+mkdir -p $SKYOS_BUILD_PATH/
 
 gclonecd() {
   git clone "$1" && cd "$(basename "$1" .git)"
