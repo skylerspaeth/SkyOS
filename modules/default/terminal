@@ -3,6 +3,9 @@
 #terminalrc location as a variable to eliminate repetition
 XFTERM_RC="$HOME/.config/xfce4/terminal/terminalrc"
 
+#ensure the file exists
+touch $XFTERM_RC
+
 #update the xfce terminal configuration file to prevent menu bar from showing on new terminals
 sed -i "/MiscMenubarDefault=TRUE/c\MiscMenubarDefault=FALSE" $XFTERM_RC
 
