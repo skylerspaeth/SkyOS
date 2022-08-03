@@ -38,3 +38,4 @@ mkdir $SKYOS_BUILD_PATH
 ```
 - Make checkboxes checkboxes again (not radios!) - seems like Orchis doesn't agree
 - Adopt a common comment standard of capitalization and spacing
+- Make all modules and install.sh fully idempotent
