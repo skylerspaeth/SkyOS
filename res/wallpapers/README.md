@@ -2,13 +2,13 @@
 
 ## Abstracts Collection
 ```
-afternoon.png
-evening.png
-late-morning.png
-midday.png
-sunrise.png
+abstract-afternoon.png
+abstract-evening.png
+abstract-midday.png
+abstract-morning.png
+abstract-sunrise.png
 ```
-These photos are taken from the default wallpapers of Zorin OS. SkyOS Hibiscus uses this collection's `evening.png` as the default.
+These photos are taken from the default wallpapers of Zorin OS. SkyOS Hibiscus uses this collection's `abstract-evening.png` as the default.
 
 ## Coast
 ```
