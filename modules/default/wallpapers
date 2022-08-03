@@ -6,7 +6,7 @@ sudo mkdir $BG_PATH
 sudo cp res/wallpapers/* $BG_PATH
 
 # set default xfce wallpaper
-BG_DEFAULT="$BGDIR/abstract-evening.png"
+BG_DEFAULT="$BG_PATH/abstract-evening.png"
 xfconf-query --channel xfce4-desktop --list | grep -e '^/backdrop/screen.*/last-image$' | while read PROP_PATH; do
   xfconf-query --channel xfce4-desktop --property $PROP_PATH --set $BG_DEFAULT
 done
