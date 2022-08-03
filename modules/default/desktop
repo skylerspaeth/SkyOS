@@ -6,7 +6,7 @@
 xfconf-query -c xfwm4 -p /general/button_layout -s "O|HMC"
 
 #hide menu bar in thunar file manager
-xfconf-query -c thunar -p /last-menubar-visible -s false
+xfconf-query -c thunar -p /last-menubar-visible -n -t bool -s false
 
 #effectively disable workspaces entirely
 xfconf-query -c xfwm4 -p /general/workspace_count -s 1
