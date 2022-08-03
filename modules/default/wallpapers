@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# install wallpapers to global directory
+BG_PATH=/usr/share/backgrounds/SkyOS
+sudo mkdir $BG_PATH
+cp res/wallpapers/* $BG_PATH
+
+# set default xfce wallpaper
+BG_DEFAULT="$BGDIR/city17-bg1.jpg"
+xfconf-query --channel xfce4-desktop --list | grep -e '^/backdrop/screen.*/last-image$' | while read PROP_PATH; do
+  xfconf-query --channel xfce4-desktop --property $PROP_PATH --set $BG_DEFAULT
+done

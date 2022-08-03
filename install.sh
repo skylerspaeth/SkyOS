@@ -11,3 +11,4 @@ gclonecd() {
 export -f gclonecd
 
 modules/default/theme
+modules/default/wallpapers
