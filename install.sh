@@ -14,5 +14,5 @@ export -f gclonecd
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 for MODULE in $(find default/ -type f); do
-  bash -e "$MODULE" || echo "$MODULE failed."; break
+  bash -e "$MODULE" || { echo "$MODULE failed, halting."; break; }
 done
