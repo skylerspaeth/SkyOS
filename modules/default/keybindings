@@ -1,0 +1,4 @@
+#!/bin/bash
+
+xfconf-query -c xfce4-keyboard-shortcuts -p /commands/custom/\<Primary\>\<Alt\>t -t string -n -s "xfce4-terminal"
+xfconf-query -c xfce4-keyboard-shortcuts -p /commands/custom/Super_L -t string -n -s "xfce4-popup-whiskermenu"
