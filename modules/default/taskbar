@@ -1,3 +1,6 @@
 #!/bin/bash
 
 sudo dnf install -y xfce4-docklike-plugin xfce4-panel-profiles
+sed -i "/^button-icon=/c\button-icon=flameshot" $HOME/.config/xfce4/panel/whiskermenu-*.rc
+
+xfce4-panel -r
