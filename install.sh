@@ -13,5 +13,6 @@ export -f gclonecd
 # ensure flathub is enabled for modules to get software from
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
-modules/default/theme
-modules/default/wallpapers
+for MODULE in $(find default/ -type f); do
+  bash -e "$MODULE" || echo "$MODULE failed."; break
+done
