@@ -41,3 +41,4 @@ mkdir $SKYOS_BUILD_PATH
 - Make all modules and install.sh fully idempotent
 - Fix terminal module seemingly not working in VM (fresh install without pre-existing terminal RC seems to break it)
 - Announce each module as they run
+- Add default zshrc and optional vimrc
