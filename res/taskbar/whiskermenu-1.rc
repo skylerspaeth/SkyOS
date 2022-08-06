@@ -1,7 +1,7 @@
 favorites=firefox.desktop,com.discordapp.Discord.desktop,steam.desktop,sh.cider.Cider.desktop,vlc.desktop,xfce4-file-manager.desktop
 recent=virtualbox.desktop,xfce4-screensaver-preferences.desktop,xfce-display-settings.desktop,nvidia-settings.desktop,sh.cider.Cider.desktop,xfce-wm-settings.desktop,xfce-keyboard-settings.desktop,xfce4-panel-profiles.desktop,galculator.desktop,com.obsproject.Studio.desktop
 button-title=Start
-button-icon=/home/skylerspaeth/Downloads/skyos.svg
+button-icon=/opt/skyos/skyos.svg
 button-single-row=false
 show-button-title=false
 show-button-icon=true
