@@ -2,7 +2,7 @@
 
 # install wallpapers to global directory
 BG_PATH=/usr/share/backgrounds/SkyOS
-sudo mkdir $BG_PATH
+sudo mkdir -p $BG_PATH
 sudo cp $SKYOS_REPO_PATH/res/wallpapers/* $BG_PATH
 
 # set default xfce wallpaper
