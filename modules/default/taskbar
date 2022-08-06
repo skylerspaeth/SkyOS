@@ -1,6 +1,16 @@
 #!/bin/bash
 
 sudo dnf install -y xfce4-docklike-plugin xfce4-panel-profiles
-sed -i "/^button-icon=/c\button-icon=flameshot" $HOME/.config/xfce4/panel/whiskermenu-*.rc
+
+TBAR=skyos-taskbar
+WHISKER_RC=$SKYOS_REPO_PATH/res/taskbar/whiskermenu-1.rc
+
+# install SkyOS start menu icon
+mkdir -p /opt/skyos && cp $SKYOS_REPO_PATH/res/skyos.svg "$_"
+
+cp $WHISKER_RC $HOME/.config/xfce4/panel/
+cp $TBAR.cfg config.txt
+tar cvf $TBAR.tar config.txt
+xfce4-panel-profiles load $TBAR.tar && rm $TBAR.tar config.txt
 
 xfce4-panel -r
