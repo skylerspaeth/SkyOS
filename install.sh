@@ -1,5 +1,6 @@
 #!/bin/bash
 
+export SKYOS_REPO_PATH=$(pwd)
 export SKYOS_BUILD_PATH=/tmp/skyos
 # ensure the directory is empty
 rm -rf $SKYOS_BUILD_PATH/*
