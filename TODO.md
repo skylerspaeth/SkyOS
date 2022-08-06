@@ -42,3 +42,4 @@ mkdir $SKYOS_BUILD_PATH
 - Fix terminal module seemingly not working in VM (fresh install without pre-existing terminal RC seems to break it)
 - Announce each module as they run
 - Add default zshrc and optional vimrc
+- https://unix.stackexchange.com/a/655937/511195 Disable window shading
