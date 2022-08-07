@@ -5,6 +5,9 @@ sudo dnf install -y xfce4-docklike-plugin xfce4-panel-profiles
 TBAR=skyos-taskbar
 TBAR_CFG=res/taskbar/$TBAR.cfg
 
+# install gtk override stylesheet
+cp res/taskbar/gtk.css $HOME/.config/gtk-3.0/
+
 # install SkyOS start menu icon
 sudo mkdir -p /opt/skyos && sudo cp res/skyos.svg "$_"
 
@@ -12,5 +15,3 @@ cp res/taskbar/whiskermenu-1.rc $HOME/.config/xfce4/panel/
 cp $TBAR_CFG config.txt
 tar cvf $TBAR.tar config.txt
 xfce4-panel-profiles load $TBAR.tar && rm $TBAR.tar config.txt
-
-xfce4-panel -r
