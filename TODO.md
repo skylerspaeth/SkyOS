@@ -1,17 +1,13 @@
 # To-do list
-- Use Kora icon theme
-- Switch to a Fedora 36 base due to newer packages
-  - Install `sudo dnf install xfce4-volumed` to get GMMK Pro volume knob working out of box (more info here: https://forum.xfce.org/viewtopic.php?id=10948)
-  - Try and find a way to get DockBarX installed easily in Fedora
-- Set pinned icons for DockBarX
-- Change DockBarX theme to "Jonatheme"
-- Customize lightdm
+- Install `sudo dnf install xfce4-volumed` to get GMMK Pro volume knob working out of box (more info here: https://forum.xfce.org/viewtopic.php?id=10948)
+- Use custom LightDM WebKit Greeter
 - Preinstall apps, drivers, and tools
 	- Allow option to skip these
 	- Try to autodetect but prompt to confirm for video driver type
 	- Steam
 	- Discord
 	- goregion
+	- Kraken RGB Driver
   - Lossless Cut:
 ```bash
 skylerspaeth@[fedora-desktop] ~ % cat /usr/share/applications/Lossless-Cut.desktop
@@ -24,7 +20,6 @@ Terminal=false
 Encoding=UTF-8
 Categories=Utility;
 ```
-- Status Tray Items -> Behavior -> Square Items - figure that out in xfconf-query
 - https://gitlab.xfce.org/xfce/xfwm4/-/issues/559
 - https://github.com/chjj/compton/issues/197
 - https://ask.fedoraproject.org/t/really-long-boot-time/3242
@@ -41,6 +36,6 @@ mkdir $SKYOS_BUILD_PATH
 - Make all modules and install.sh fully idempotent
   - Cleanup before all files are downloaded and after they're used
 - Fix terminal module seemingly not working in VM (fresh install without pre-existing terminal RC seems to break it)
-- Announce each module as they run
+- Announce each module as they run, quiet module output unless verbose specified
 - Add default zshrc and optional vimrc
 - https://unix.stackexchange.com/a/655937/511195 Disable window shading
