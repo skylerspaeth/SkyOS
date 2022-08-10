@@ -6,7 +6,7 @@ TBAR=skyos-taskbar
 TBAR_CFG=res/taskbar/$TBAR.cfg
 
 # install gtk override stylesheet
-cp res/taskbar/gtk.css $HOME/.config/gtk-3.0/
+mkdir -p $HOME/.config/gtk-3.0 && cp res/taskbar/gtk.css "$_"
 
 # install SkyOS start menu icon
 sudo mkdir -p /opt/skyos && sudo cp res/skyos.svg "$_"
