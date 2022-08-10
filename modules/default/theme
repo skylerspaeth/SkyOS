@@ -9,8 +9,8 @@ SKYOS_THEME="SkyOS-Orchis"
   --name $SKYOS_THEME \
   --color dark \
   --size compact \
-  --theme purple \
+  --theme blue \
   --tweaks primary
 
-xfconf-query -c xsettings -p /Net/ThemeName -s $SKYOS_THEME-Purple-Dark-Compact
-xfconf-query -c xfwm4 -p /general/theme -s $SKYOS_THEME-Purple-Dark-Compact
+xfconf-query -c xsettings -p /Net/ThemeName -s $SKYOS_THEME-Blue-Dark-Compact
+xfconf-query -c xfwm4 -p /general/theme -s $SKYOS_THEME-Blue-Dark-Compact
