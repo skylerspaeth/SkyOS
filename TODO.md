@@ -4,8 +4,7 @@
 - Preinstall apps, drivers, and tools
 	- Allow option to skip these
 	- Try to autodetect but prompt to confirm for video driver type
-	- Steam
-	- Discord
+  - Add default zshrc and optional vimrc
 	- goregion
 	- Kraken RGB Driver
   - Lossless Cut:
@@ -23,7 +22,6 @@ Categories=Utility;
 - https://gitlab.xfce.org/xfce/xfwm4/-/issues/559
 - https://github.com/chjj/compton/issues/197
 - https://ask.fedoraproject.org/t/really-long-boot-time/3242
-- https://github.com/hanschen/ksuperkey
 - Prevent login screen from showing up on cursor screen, rather stay on main display
 - Bind Win + L to xflock4
 - Add to script that calls each installer:
@@ -37,5 +35,3 @@ mkdir $SKYOS_BUILD_PATH
   - Cleanup before all files are downloaded and after they're used
 - Fix terminal module seemingly not working in VM (fresh install without pre-existing terminal RC seems to break it)
 - Announce each module as they run, quiet module output unless verbose specified
-- Add default zshrc and optional vimrc
-- https://unix.stackexchange.com/a/655937/511195 Disable window shading
