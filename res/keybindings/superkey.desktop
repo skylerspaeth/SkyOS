@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=superkey
+Comment=Allow multiple keybinds to share the super key
+Exec=ksuperkey
+OnlyShowIn=XFCE;
+RunHook=0
+StartupNotify=false
+Terminal=false
+Hidden=false

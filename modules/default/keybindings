@@ -1,7 +1,17 @@
 #!/bin/bash
 
-xfconf-query -c xfce4-keyboard-shortcuts -p /commands/custom/\<Primary\>\<Alt\>t -t string -n -s "xfce4-terminal"
-xfconf-query -c xfce4-keyboard-shortcuts -p /commands/custom/Super_L -t string -n -s "xfce4-popup-whiskermenu"
+# allow multiple shortcuts to use super key
+sudo dnf -y install git gcc make libX11-devel libXtst-devel pkgconfig
+gclonecd https://github.com/hanschen/ksuperkey.git
+make
+sudo make install && cd ..
+
+# ensure the superkey behavior persists on reboot
+cp res/keybindings/superkey.desktop ~/.config/autostart
+xfconf-query -c xfce4-keyboard-shortcuts -p "/commands/custom/<Alt>F1" -t string -n -s "xfce4-popup-whiskermenu"
+
+# gnome-like terminal shortcut
+xfconf-query -c xfce4-keyboard-shortcuts -p "/commands/custom/<Primary><Alt>t" -t string -n -s "xfce4-terminal"
 
 # windows-like window snapping
 xfconf-query -c xfce4-keyboard-shortcuts -p "/xfwm4/custom/<Shift><Super>Up" -t string -n -s "tile_up_key"
