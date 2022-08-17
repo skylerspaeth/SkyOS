@@ -1,0 +1,12 @@
+#!/bin/bash
+
+sudo dnf install -y obs-studio
+
+# disable xfce session saving to allow obs autostart
+xfconf-query -c xfce4-session -p /general/SaveOnExit -n -t bool -s false
+
+# remove previous sessions
+rm -rf ~/.cache/sessions/*
+
+# autostart obs studio
+cp res/obs/obs-replay-buffer.desktop ~/.config/autostart/

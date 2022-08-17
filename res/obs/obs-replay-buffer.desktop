@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+Name=OBS Replay Buffer
+Comment=Start the OBS replay buffer in the background
+Exec=bash -c 'OBSCMD="obs --startreplaybuffer --minimize-to-tray" && if ! pgrep -f "^$OBSCMD$"; then $OBSCMD; fi'
+OnlyShowIn=XFCE;
+RunHook=0
+StartupNotify=false
+Terminal=false
+Hidden=false

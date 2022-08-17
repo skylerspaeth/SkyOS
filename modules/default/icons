@@ -1,0 +1,9 @@
+#!/bin/bash
+
+git clone https://github.com/bikass/kora.git && cd kora/
+sudo cp -r kora/ /usr/share/icons/
+
+xfconf-query -c xsettings -p /Net/IconThemeName -s kora
+
+# use default steam logo instead of kora
+# use same style session menu icons (SU is wrong)

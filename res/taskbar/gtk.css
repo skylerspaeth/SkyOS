@@ -1,0 +1,98 @@
+/* 
+  GTK CSS tweaks inspired by
+  code from LinuxScoop team:
+  https://youtube.com/c/linuxscoop
+  https://linuxscoop.com
+*/
+
+#pulseaudio-button image { -gtk-icon-transform: scale(0.60); }
+#xfce4-power-manager-plugin image {-gtk-icon-transform: scale(0.60);}
+#xfce4-notification-plugin image {-gtk-icon-transform: scale(0.60);}
+
+#whiskermenu-window * {
+  border: 0px rgba(50, 52, 61, 0.95) solid; /*All border*/
+  outline: none;
+  overflow: auto;
+}
+#whiskermenu-window {
+  background-color: rgba(50, 52, 61, 0.8) ; /*All window*/
+  color: #e6ebef; /*Text color ex:username*/
+  border-radius: 10px 10px 0px 0px;
+}
+
+#whiskermenu-window scrollbar {
+  background: transparent;
+}
+#whiskermenu-window entry {
+  background-color: rgba(0, 0, 0, 0.25); /*search box color */
+  color: #e6ebef;/* search text color */
+}
+
+#whiskermenu-window button {
+  background-color: rgba(50, 52, 61, 0.0); /*Color of Button category*/
+  color: #e6ebef; /*Color of Text button category*/
+  margin: 1px;
+  margin-right: 2px;
+  border-radius: 5px;
+  background-image: none;
+}
+
+#whiskermenu-window treeview {
+  background-color: rgba(50, 52, 61, 0.1); /*Box Color of application when click/Hover on category */
+  color: #e6ebef; /*Text Color of application when click/Hover on category */
+  background-image: none;
+  outline-color: rgba(0, 0, 0, 0);
+}
+
+#whiskermenu-window .frame:first-child {
+  background: rgba(50, 52, 61, 0); /*First Color Box of favorite/All applications*/
+  padding: 5px 5px 5px 5px;
+  border-radius: 8px;
+}
+
+#whiskermenu-window button:focus,
+#whiskermenu-window button:hover,
+#whiskermenu-window button:active,
+#whiskermenu-window button:selected,
+#whiskermenu-window treeview:selected,
+#whiskermenu-window treeview:hover,
+#whiskermenu-window treeview:active,
+#whiskermenu-window treeview:focus
+{
+  background-color: #5294e2; /*Button Color click/Hover  */
+  color: #ffffff; /*Text Button Color click/Hover  */
+  transition: 200ms;
+  
+}
+#whiskermenu-window button:active {
+  background: #2679db; /*Button Color click-active  */
+}
+#whiskermenu-window treeview:focus {
+  background: transparent;
+}
+#whiskermenu-window iconview{
+  background: transparent;
+  border-radius: 8px;
+}
+#whiskermenu-window iconview:hover{
+  background: rgba(50, 52, 61, 0.25);
+  border: 1px rgba(255, 255, 255, 0.25) solid;
+}
+
+#whiskermenu-window iconview{
+  background: transparent;
+  border-radius: 10px;
+}
+
+#whiskermenu-window iconview {
+  color: #ffffff; /*text color when icon view mode*/
+}
+
+/*Docklike Plugin*/
+#docklike-plugin .hover_group { background-color: rgba(128, 128, 128, 0.2); }
+/* #docklike-plugin .open_group {...} */
+/* #docklike-plugin .active_group {...} */
+#docklike-plugin button {
+  min-height: 38px;
+  min-width: 38px;
+}

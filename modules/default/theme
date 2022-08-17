@@ -1,0 +1,15 @@
+#!/bin/bash
+cd $SKYOS_BUILD_PATH
+
+sudo dnf -y install sassc
+gclonecd https://github.com/vinceliuice/Orchis-theme.git
+
+SKYOS_THEME="SkyOS-Orchis"
+./install.sh \
+  --name $SKYOS_THEME \
+  --color dark \
+  --size compact \
+  --tweaks primary
+
+xfconf-query -c xsettings -p /Net/ThemeName -s $SKYOS_THEME-Dark-Compact
+xfconf-query -c xfwm4 -p /general/theme -s $SKYOS_THEME-Dark-Compact
