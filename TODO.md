@@ -35,3 +35,4 @@ mkdir $SKYOS_BUILD_PATH
   - Cleanup before all files are downloaded and after they're used
 - Fix terminal module seemingly not working in VM (fresh install without pre-existing terminal RC seems to break it)
 - Announce each module as they run, quiet module output unless verbose specified
+- Picom blur only taskbar and start menu
