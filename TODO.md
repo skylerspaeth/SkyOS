@@ -36,3 +36,4 @@ mkdir $SKYOS_BUILD_PATH
 - Fix terminal module seemingly not working in VM (fresh install without pre-existing terminal RC seems to break it)
 - Announce each module as they run, quiet module output unless verbose specified
 - Picom blur only taskbar and start menu
+- Make hover of system tray icons like network and bluetooth look like discord and OBS
