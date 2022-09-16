@@ -32,7 +32,7 @@ while getopts ":hfv" option; do
       FULL=true
       ;;
     v)
-      echo "SkyOS $RELEASE (v$VERSION)"
+      echo "$BRAND_TEXT (v$VERSION)"
       echo "Released $DATE"
       echo
       echo "Authored by Skyler Spaeth, inspired by the FOSS community"
