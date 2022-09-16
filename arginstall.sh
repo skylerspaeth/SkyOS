@@ -29,7 +29,7 @@ while getopts ":hfv" option; do
       INSTALL_HELP
       exit 0;;
     f)
-      FULL=true
+      FULL_INSTALL=true
       ;;
     v)
       echo "$BRAND_TEXT (v$VERSION)"
@@ -47,6 +47,39 @@ while getopts ":hfv" option; do
   esac
 done
 
+# script body
 echo
 echo "$BRAND_TEXT (v$VERSION)"
 echo
+export SKYOS_REPO_PATH=$(pwd)
+export SKYOS_BUILD_PATH=/tmp/skyos
+# ensure the directory is empty
+rm -rf $SKYOS_BUILD_PATH/*
+mkdir -p $SKYOS_BUILD_PATH/
+
+gclonecd() {
+  git clone "$1" && cd "$(basename "$1" .git)"
+}
+export -f gclonecd
+
+# ensure flathub is enabled for modules to get software from
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
+RUN_MODULE() {
+  bash -e "$MODULE" || { echo "$MODULE failed, halting."; break; }
+}
+
+for MODULE in $(find modules/default/ -type f ! -name '*.swp'); do
+  RUN_MODULE
+done
+
+for MODULE in $(find modules/optional/ -type f ! -name '*.swp'); do
+  if [ "$FULL_INSTALL" == true ]; then
+    RUN_MODULE
+  else 
+    read -p "$MODULE? [Y/n]: " RUN; RUN="${RUN:=Y}"
+    if [ "${RUN^^}" == "Y" ]; then
+      RUN_MODULE
+    fi
+  fi
+done
