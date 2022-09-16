@@ -30,3 +30,9 @@ launchpad.jpg
 ```
 This picture is thought to depict a shuttle on a crawler preparing for its flight to Mars. I initially stumbled upon this wallpaper via Reddit here: https://www.reddit.com/r/wallpapers/comments/fgubc7/launchpad_by_wanbao_3840x2160/
 As far as I can tell though, the original was posted by uesr wanbao on DeviantArt here: https://www.deviantart.com/wanbao/art/071-1-699447515
+
+## Ventura
+```
+ventura.png
+```
+Ventura is just the default macOS Ventura wallpaper, cropped to look good in a dual-monitor configuration.
