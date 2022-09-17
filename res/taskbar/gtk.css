@@ -45,9 +45,9 @@
   padding: 3px;
 }
 
-#whiskermenu-window .frame > * {
+#whiskermenu-window .frame {
   background: rgba(0, 0, 0, 0.25); /*First Color Box of favorite/All applications*/
-  padding: 5px 5px 5px 5px;
+  padding: 5px;
   border-radius: 8px;
 }
 
@@ -60,13 +60,18 @@
 #whiskermenu-window treeview:active,
 #whiskermenu-window treeview:focus
 {
-  background-color: rgba(0, 0, 0, 0);
+  /*background-color: rgba(0, 0, 0, 0.1);*/
   /*background-color: #5294e2; /*Button Color click/Hover  */ */
   color: #ffffff; /*Text Button Color click/Hover  */
-  transition: 200ms;
 }
 #whiskermenu-window button:active {
   background: #2679db; /*Button Color click-active  */
+}
+#whiskermenu-window button:hover {
+  background: rgba(0, 0, 0, 0.6); /*Button Color click-active  */
+}
+#whiskermenu-window treeview:hover {
+  background: rgba(0, 0, 0, 0.3); /*Button Color click-active  */
 }
 #whiskermenu-window treeview:focus {
   background: transparent;
