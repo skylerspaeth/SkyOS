@@ -1,1 +1,3 @@
 #!/bin/bash
+
+cp $SKYOS_REPO_PATH/res/login/face.png $HOME/.face
