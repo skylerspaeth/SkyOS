@@ -12,7 +12,7 @@
 #whiskermenu-window * {
   border: 0px rgba(50, 52, 61, 0.95) solid; /*All border*/
   outline: none;
-  overflow: auto;
+  /*overflow: auto;*/
 }
 #whiskermenu-window {
   background-color: rgba(50, 52, 61, 0.8) ; /*All window*/
@@ -45,7 +45,8 @@
   padding: 3px;
 }
 
-#whiskermenu-window .frame {
+#whiskermenu-window .frame:first-child,
+#whiskermenu-window .frame:last-child {
   background: rgba(0, 0, 0, 0.25); /*First Color Box of favorite/All applications*/
   padding: 5px;
   border-radius: 8px;
@@ -61,7 +62,8 @@
 #whiskermenu-window treeview:focus
 {
   /*background-color: rgba(0, 0, 0, 0.1);*/
-  /*background-color: #5294e2; /*Button Color click/Hover  */ */
+  /*background-color: #5294e2; */
+  /*Button Color click/Hover   */
   color: #ffffff; /*Text Button Color click/Hover  */
 }
 #whiskermenu-window button:active {
