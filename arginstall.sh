@@ -65,21 +65,17 @@ export -f gclonecd
 # ensure flathub is enabled for modules to get software from
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
-RUN_MODULE() {
-  bash -e "$MODULE" || { echo "$MODULE failed, halting."; break; }
-}
-
 for MODULE in $(find modules/default/ -type f ! -name '*.swp'); do
-  RUN_MODULE
+  bash -e "$MODULE" || { echo "$MODULE failed, halting."; break; }
 done
 
 for MODULE in $(find modules/optional/ -type f ! -name '*.swp'); do
   if [ "$FULL_INSTALL" == true ]; then
-    RUN_MODULE
+    bash -e "$MODULE" || { echo "$MODULE failed, halting."; break; }
   else 
     read -p "$MODULE? [Y/n]: " RUN; RUN="${RUN:=Y}"
     if [ "${RUN^^}" == "Y" ]; then
-      RUN_MODULE
+      bash -e "$MODULE" || { echo "$MODULE failed, halting."; break; }
     fi
   fi
 done
