@@ -96,6 +96,11 @@
   color: #ffffff; /*text color when icon view mode*/
 }
 
+#whiskermenu-window .profile-picture {
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
 /*Docklike Plugin*/
 #docklike-plugin .hover_group { background-color: rgba(128, 128, 128, 0.2); }
 /* #docklike-plugin .open_group {...} */
@@ -103,4 +108,8 @@
 #docklike-plugin button {
   min-height: 38px;
   min-width: 38px;
+}
+
+#showdesktop-8 image {
+  opacity: 0;
 }
