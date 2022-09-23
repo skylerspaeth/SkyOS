@@ -13,3 +13,7 @@ xfconf-query -c xfwm4 -p /general/workspace_count -s 1
 
 # disable scrollwheel shade
 xfconf-query -c xfwm4 -p /general/mousewheel_rollup -s false
+
+# setup picom
+sudo dnf install -y picom
+mkdir -p $HOME/.config && cp res/desktop/picom.conf "$_"
