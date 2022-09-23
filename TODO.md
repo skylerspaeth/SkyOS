@@ -37,3 +37,5 @@ mkdir $SKYOS_BUILD_PATH
 - Announce each module as they run, quiet module output unless verbose specified
 - Picom blur only taskbar and start menu
 - Make hover of system tray icons like network and bluetooth look like discord and OBS
+  - https://forum.xfce.org/viewtopic.php?id=14586
+  - Doesn't seem like this is supported yet unfortunately
