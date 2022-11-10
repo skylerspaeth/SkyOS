@@ -20,6 +20,10 @@ xfconf-query -c xsettings -p /Net/ThemeName -s "Qogir-win-dark"
 wget -qO- https://raw.githubusercontent.com/PapirusDevelopmentTeam/papirus-icon-theme/master/install.sh | \
 DESTDIR="$HOME/.icons" sh && xfconf-query -c xsettings -p /Net/IconThemeName -s "Papirus-Dark"
 
+# ***LOGIN SCREEN***
+sudo apt-get install lightdm-gtk-greeter-settings
+sudo sed -i "/^background = /c\background = /home/skylerspaeth/skyostmp/res/wallpapers/elegance-blue.jpg" /etc/lightdm/lightdm-gtk-greeter.conf
+
 # *** DESKTOP WALLPAPERS ***
 #copy wallpapers outside of repo
 BGDIR="/usr/share/wallpapers/SkyOS/contents/images"

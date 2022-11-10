@@ -1,4 +1,5 @@
 # To-do list
+- Implement option to select between dynamic distro logo and static flameshot/akira/whatever
 - Set pinned icons for DockBarX
 - Change DockBarX theme to "Jonatheme"
 - Customize lightdm
