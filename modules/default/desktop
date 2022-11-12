@@ -15,7 +15,7 @@ xfconf-query -c xfwm4 -p /general/workspace_count -s 1
 xfconf-query -c xfwm4 -p /general/mousewheel_rollup -s false
 
 # fix hideously large desktop icon tooltips
-xfconf-query -c xfce4-desktop -p /desktop-icons/tooltip-size -n -s 40
+xfconf-query -c xfce4-desktop -p /desktop-icons/tooltip-size -n -t int -s 40
 
 # setup picom
 sudo dnf install -y picom
