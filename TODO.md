@@ -39,3 +39,17 @@ mkdir $SKYOS_BUILD_PATH
 - Make hover of system tray icons like network and bluetooth look like discord and OBS
   - https://forum.xfce.org/viewtopic.php?id=14586
   - Doesn't seem like this is supported yet unfortunately
+- Implement check on all module scripts to ensure they're not being ran indivudally
+  - Since the modules a aren't designed for this, I don't want any unintended consequences
+  - Worth checking if this can be put into an exported function in `arginstall.sh` and still run as expected
+  - To do this, use a check like:
+```bash
+#!/bin/bash
+
+if ! [[ $SHLVL -gt 2 ]]; then
+  echo "This script is not designed to be ran individually. Failing"
+  exit 1
+else
+  echo "Running successfully"
+fi
+```
