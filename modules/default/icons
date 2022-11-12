@@ -5,7 +5,7 @@ KORA_INSTALL_PATH="/usr/share/icons/kora"
 if [[ -d $KORA_INSTALL_PATH ]]; then
   QUESTION="Kora already installed. Overwrite, removing custom icons?"
   read -p "$QUESTION [Y/n]: " OW; OW="${OW:=Y}"
-  if [[ "${RUN^^}" == "N" ]]; then
+  if [[ "${OW^^}" == "N" ]]; then
     echo "Ok, canceling..."
     exit 0
   fi
