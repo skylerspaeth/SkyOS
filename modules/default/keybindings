@@ -5,6 +5,7 @@ sudo dnf -y install git gcc make libX11-devel libXtst-devel pkgconfig
 gclonecd https://github.com/hanschen/ksuperkey.git
 make
 sudo make install && cd ..
+rm -rf ksuperkey/
 
 # ensure the superkey behavior persists on reboot
 cp res/keybindings/superkey.desktop ~/.config/autostart
