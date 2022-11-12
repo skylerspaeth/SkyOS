@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Install and switch to zsh
+sudo dnf install -y zsh
+chsh -s $(which zsh)
+
+# Make a backup of current zshrc if present
+if [[ -f "$HOME/.zshrc" ]]; then
+  mv $HOME/.zshrc $HOME/.zshrc.skyosbkp
+fi
+
+# Download SkyOS zshrc from DotFiles repo @ this version's tag
+wget -P ~ "https://raw.githubusercontent.com/skylerspaeth/DotFiles/skyos-v$VERSION/.zshrc"

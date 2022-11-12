@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Install vim
+sudo dnf install -y vim
+
+# Make a backup of current vimrc if present
+if [[ -f "$HOME/.vimrc" ]]; then
+  mv $HOME/.vimrc $HOME/.vimrc.skyosbkp
+fi
+
+# Download SkyOS vimrc from DotFiles repo @ this version's tag
+wget -P ~ "https://raw.githubusercontent.com/skylerspaeth/DotFiles/skyos-v$VERSION/.vimrc"

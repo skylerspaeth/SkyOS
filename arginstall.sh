@@ -2,8 +2,9 @@
 
 SCRIPT_NAME=$(basename "$0")
 
+# Load version info into variables, export VERSION to use as DotFiles tag within modules
 RELEASE=$(sed -n 1p version.txt)
-VERSION=$(sed -n 2p version.txt)
+export VERSION=$(sed -n 2p version.txt)
 DATE=$(sed -n 3p version.txt)
 
 BRAND_TEXT=$(echo -e "\e[1m\u001b[38;5;93mSky\e[0m\u001b[0m\u001b[38;5;38mOS\e[0m $RELEASE")
