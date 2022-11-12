@@ -60,3 +60,5 @@ fi
 - Add `skyos` info command
 - Add optional module's apps to the start menu when selected
   - Probably something like pushing them to the file programatically and generating the whisker-menu.rc file on-the-fly
+- Fix settings icon in start menu, it looks bad, probably replace it with another icon. Can use GTK CSS IIRC
+- Fix Steam and Discord icons. Both also look awful in Kora
