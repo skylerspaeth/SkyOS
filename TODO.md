@@ -60,5 +60,9 @@ fi
 - Add `skyos` info command
 - Add optional module's apps to the start menu when selected
   - Probably something like pushing them to the file programatically and generating the whisker-menu.rc file on-the-fly
+  - Check if device is a laptop and then push battery to status bar if so
+    - Could do this based off whether battery is present
+    - Or: `dmidecode --string chassis-type`
+    - From https://superuser.com/questions/877677/programatically-determine-if-an-script-is-being-executed-on-laptop-or-desktop
 - Fix settings icon in start menu, it looks bad, probably replace it with another icon. Can use GTK CSS IIRC
 - Fix Steam and Discord icons. Both also look awful in Kora
