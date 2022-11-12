@@ -1,7 +1,20 @@
 #!/bin/bash
 
+KORA_INSTALL_PATH="/usr/share/icons/kora"
+
+if [[ -d $KORA_INSTALL_PATH ]]; then
+  QUESTION="Kora already installed. Overwrite, removing custom icons?"
+  read -p "$QUESTION [Y/n]: " OW; OW="${OW:=Y}"
+  if [[ "${RUN^^}" == "N" ]]; then
+    echo "Ok, canceling..."
+    exit 0
+  fi
+fi
+
+sudo rm -rf $KORA_INSTALL_PATH
 git clone https://github.com/bikass/kora.git && cd kora/
 sudo cp -r kora/ /usr/share/icons/
+rm -rf kora/
 
 xfconf-query -c xsettings -p /Net/IconThemeName -s kora
 
