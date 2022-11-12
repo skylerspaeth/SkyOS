@@ -57,3 +57,4 @@ fi
   - Make it able to handle Y and N, retrying on anything else
   - Add it to the icons module and use it within arginstall
 - Come up with a way to remove all the temp files and repos downloaded and created along the way
+- Add `skyos` info command
