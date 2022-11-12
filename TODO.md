@@ -58,3 +58,5 @@ fi
   - Add it to the icons module and use it within arginstall
 - Come up with a way to remove all the temp files and repos downloaded and created along the way
 - Add `skyos` info command
+- Add optional module's apps to the start menu when selected
+  - Probably something like pushing them to the file programatically and generating the whisker-menu.rc file on-the-fly

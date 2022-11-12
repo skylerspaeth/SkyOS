@@ -2,11 +2,14 @@
 
 KORA_INSTALL_PATH="/usr/share/icons/kora"
 
+# Remote leftover directory if exists
+rm -rf kora/
+
 if [[ -d $KORA_INSTALL_PATH ]]; then
   QUESTION="Kora already installed. Overwrite, removing custom icons?"
   read -p "$QUESTION [Y/n]: " OW; OW="${OW:=Y}"
   if [[ "${OW^^}" == "N" ]]; then
-    echo "Ok, canceling..."
+    echo "Ok, skipping Kora module..."
     exit 0
   fi
 fi
