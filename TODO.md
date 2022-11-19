@@ -55,3 +55,9 @@ Categories=Utility;
 - Add full module list and descriptions to either README or dedicated modules.md file
 - Disable the super bright and kind of annoying alt-tab blue background
 - Add SkyOS-colored logo to neofetch to please Thoth
+- Use kickstart files and automate ISO build process with Jenkins
+  - https://pagure.io/fedora-kickstarts/blob/main/f/fedora-live-xfce.ks
+  - https://pagure.io/fedora-kickstarts/blob/main/f/fedora-xfce-common.ks
+  - https://pagure.io/fedora-kickstarts/tree/main
+  - https://docs.fedoraproject.org/en-US/remix-building/remix-ci/
+  - https://fedoraproject.org/wiki/Remix#How\_do\_I\_remix\_Fedora?
