@@ -11,4 +11,4 @@ fi
 
 # Download SkyOS vimrc from DotFiles repo @ this version's tag
 (cd ~ && curl -O https://raw.githubusercontent.com/skylerspaeth/DotFiles/skyos-v$VERSION/.vimrc)
-(mkdir -p ~/.vim/colors && cd $_ && curl -O https://raw.githubusercontent.com/skylerspaeth/DotFiles/master/.vim/colors/PaperColor.vim)
+(mkdir -p ~/.vim/colors && cd $_ && curl -O https://raw.githubusercontent.com/skylerspaeth/DotFiles/skyos-v$VERSION/.vim/colors/PaperColor.vim)
