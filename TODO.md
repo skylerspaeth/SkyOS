@@ -54,3 +54,4 @@ Categories=Utility;
 - Fix Steam and Discord icons. Both also look awful in Kora
 - Add full module list and descriptions to either README or dedicated modules.md file
 - Disable the super bright and kind of annoying alt-tab blue background
+- Add SkyOS-colored logo to neofetch to please Thoth
