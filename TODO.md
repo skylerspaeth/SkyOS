@@ -63,3 +63,4 @@ Categories=Utility;
   - https://fedoraproject.org/wiki/Remix#How\_do\_I\_remix\_Fedora?
 - Create firefox module and remove all pocket BS from it
   - Configure homepage to be clean and tile-less while doing above
+- A little can be done to theme the calendar panel applet: https://forum.xfce.org/viewtopic.php?id=14922
