@@ -1,6 +1,8 @@
 [Desktop Entry]
 Encoding=UTF-8
 Name=superkey
+# Uncomment below line to show in Session and Startup
+# Type=Application
 Comment=Allow multiple keybinds to share the super key
 Exec=ksuperkey
 OnlyShowIn=XFCE;

@@ -13,7 +13,9 @@ sudo make install && cd ..
 rm -rf ksuperkey/
 
 # ensure the superkey behavior persists on reboot
-cp res/keybindings/superkey.desktop ~/.config/autostart
+mkdir -p ~/.config/autostart
+cp res/keybindings/superkey.desktop $_
+
 xfconf-query -c xfce4-keyboard-shortcuts -p "/commands/custom/<Alt>F1" -t string -n -s "xfce4-popup-whiskermenu"
 
 # gnome-like terminal shortcut
