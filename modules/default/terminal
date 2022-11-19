@@ -5,14 +5,13 @@ if ! [[ $SHLVL -gt 2 ]]; then
   exit 1
 fi
 
-#terminalrc location as a variable to eliminate repetition
-XFTERM_DIR="$HOME/.config/xfce4/terminal"
-
 #ensure the directory exists
-mkdir -p "$XFTERM_DIR"
+mkdir -p "$HOME/.config/xfce4/terminal"
+
+XFTERM_RC="$_/terminalrc"
 
 #ensure the file exists
-touch "$XFTERM_DIR/terminalrc"
+touch "$XFTERM_RC"
 
 #update the xfce terminal configuration file to prevent menu bar from showing on new terminals
 sed -i "/MiscMenubarDefault=TRUE/c\MiscMenubarDefault=FALSE" $XFTERM_RC
