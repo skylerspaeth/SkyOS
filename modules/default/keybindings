@@ -12,6 +12,9 @@ make
 sudo make install && cd ..
 rm -rf ksuperkey/
 
+# start superkey for this session
+ksuperkey
+
 # ensure the superkey behavior persists on reboot
 mkdir -p ~/.config/autostart
 cp res/keybindings/superkey.desktop $_
