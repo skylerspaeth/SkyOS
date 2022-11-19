@@ -9,10 +9,10 @@ fi
 XFTERM_DIR="$HOME/.config/xfce4/terminal"
 
 #ensure the directory exists
-mkdir -p $XFTERM_DIR
+mkdir -p "$XFTERM_DIR"
 
 #ensure the file exists
-touch $XFTERM_DIR/terminalrc"
+touch "$XFTERM_DIR/terminalrc"
 
 #update the xfce terminal configuration file to prevent menu bar from showing on new terminals
 sed -i "/MiscMenubarDefault=TRUE/c\MiscMenubarDefault=FALSE" $XFTERM_RC
