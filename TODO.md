@@ -2,11 +2,11 @@
 - Install `sudo dnf install xfce4-volumed` to get GMMK Pro volume knob working out of box (more info here: https://forum.xfce.org/viewtopic.php?id=10948)
 - Use custom LightDM WebKit Greeter
 - Preinstall apps, drivers, and tools
-	- Allow option to skip these
-	- Try to autodetect but prompt to confirm for video driver type
+  - Allow option to skip these
+  - Try to autodetect but prompt to confirm for video driver type
   - Add default zshrc and optional vimrc
-	- goregion
-	- Kraken RGB Driver
+  - goregion
+  - Kraken RGB Driver
   - Lossless Cut:
 ```bash
 skylerspaeth@[fedora-desktop] ~ % cat /usr/share/applications/Lossless-Cut.desktop
@@ -66,3 +66,5 @@ fi
     - From https://superuser.com/questions/877677/programatically-determine-if-an-script-is-being-executed-on-laptop-or-desktop
 - Fix settings icon in start menu, it looks bad, probably replace it with another icon. Can use GTK CSS IIRC
 - Fix Steam and Discord icons. Both also look awful in Kora
+- Add full module list and descriptions to either README or dedicated modules.md file
+- Disable the super bright and kind of annoying alt-tab blue background
