@@ -1,3 +1,8 @@
 #!/bin/bash
 
+if ! [[ $SHLVL -gt 2 ]]; then
+  echo "This script is not designed to be ran individually. Failing"
+  exit 1
+fi
+
 flatpak install -y --noninteractive flathub com.mojang.Minecraft

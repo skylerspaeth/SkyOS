@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if ! [[ $SHLVL -gt 2 ]]; then
+  echo "This script is not designed to be ran individually. Failing"
+  exit 1
+fi
+
 # install wallpapers to global directory
 BG_PATH=/usr/share/backgrounds/SkyOS
 sudo mkdir -p $BG_PATH

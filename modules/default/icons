@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if ! [[ $SHLVL -gt 2 ]]; then
+  echo "This script is not designed to be ran individually. Failing"
+  exit 1
+fi
+
 KORA_INSTALL_PATH="/usr/share/icons/kora"
 
 # Remote leftover directory if exists

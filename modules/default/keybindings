@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if ! [[ $SHLVL -gt 2 ]]; then
+  echo "This script is not designed to be ran individually. Failing"
+  exit 1
+fi
+
 # allow multiple shortcuts to use super key
 sudo dnf -y install git gcc make libX11-devel libXtst-devel pkgconfig
 gclonecd https://github.com/hanschen/ksuperkey.git

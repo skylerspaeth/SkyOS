@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if ! [[ $SHLVL -gt 2 ]]; then
+  echo "This script is not designed to be ran individually. Failing"
+  exit 1
+fi
+
 # OPTIMALLY THIS SCRIPT SHOULD BE RUN BEFORE WALLPAPERS, BEAR IN MIND ALPHABETICALLY
 
 # tell xfconf to arrange the titlebar buttons in the right order
