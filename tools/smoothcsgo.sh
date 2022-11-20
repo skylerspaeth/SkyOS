@@ -1,6 +1,6 @@
 #!/bin/bash
 
-COMPENABLED=$(xfconf-query -c xfwm4 -p /general/use_compositing)
+COMPENABLED=$(pgrep -x "picom" > /dev/null && echo true || echo false)
 
 while true; do
   # get active window's pid
@@ -13,11 +13,11 @@ while true; do
   [ ! -z "${ACTIVEPID##*[!0-9]*}" ] && ACTIVENAME=$(awk '{print $2}' /proc/$ACTIVEPID/stat)
   if [ "$ACTIVENAME" == "(csgo_linux64)" ]; then
     if [ "$COMPENABLED" == true ]; then
-      xfconf-query -c xfwm4 -p /general/use_compositing -t bool -s false && COMPENABLED=false
+      pkill picom && COMPENABLED=false
     fi
   else
     if [ "$COMPENABLED" == false ]; then
-      xfconf-query -c xfwm4 -p /general/use_compositing -t bool -s true && COMPENABLED=true
+      picom && COMPENABLED=true
     fi
   fi
   sleep 1;
