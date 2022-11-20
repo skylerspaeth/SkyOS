@@ -13,13 +13,14 @@ XFTERM_RC="$_/terminalrc"
 #ensure the file exists
 touch "$XFTERM_RC"
 
-#update the xfce terminal configuration file to prevent menu bar from showing on new terminals
-sed -i "/MiscMenubarDefault=TRUE/c\MiscMenubarDefault=FALSE" $XFTERM_RC
+#first check if MiscMenubarDefault key exists and create it if not. then set the value
+grep '^MiscMenubarDefault=' $XFTERM_RC > /dev/null || echo "MiscMenubarDefault=" >> $XFTERM_RC
+sed -i "/MiscMenubarDefault=/c\MiscMenubarDefault=FALSE" $XFTERM_RC
 
-#first check if BackgroundMode key exists and create it if not. then set the value
-grep '^BackgroundMode=/*' $XFTERM_RC > /dev/null || echo "BackgroundMode=" >> $XFTERM_RC
+#do the same but for BackgroundMode
+grep '^BackgroundMode=' $XFTERM_RC > /dev/null || echo "BackgroundMode=" >> $XFTERM_RC
 sed -i "/BackgroundMode=/c\BackgroundMode=TERMINAL_BACKGROUND_TRANSPARENT" $XFTERM_RC
 
 #do the same but for BackgroundDarkness
-grep '^BackgroundDarkness=/*' $XFTERM_RC > /dev/null || echo "BackgroundDarkness=" >> $XFTERM_RC
+grep '^BackgroundDarkness=' $XFTERM_RC > /dev/null || echo "BackgroundDarkness=" >> $XFTERM_RC
 sed -i "/BackgroundDarkness=/c\BackgroundDarkness=0.95" $XFTERM_RC
