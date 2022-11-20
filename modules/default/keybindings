@@ -24,6 +24,9 @@ xfconf-query -c xfce4-keyboard-shortcuts -p "/commands/custom/<Alt>F1" -t string
 # gnome-like terminal shortcut
 xfconf-query -c xfce4-keyboard-shortcuts -p "/commands/custom/<Primary><Alt>t" -t string -n -s "xfce4-terminal"
 
+# windows-like super + L lock
+xfconf-query -c xfce4-keyboard-shortcuts -p "/commands/custom/<Super>l" -t string -n -s "xflock4"
+
 # windows-like window snapping
 xfconf-query -c xfce4-keyboard-shortcuts -p "/xfwm4/custom/<Shift><Super>Up" -t string -n -s "tile_up_key"
 xfconf-query -c xfce4-keyboard-shortcuts -p "/xfwm4/custom/<Shift><Super>Down" -t string -n -s "hide_window_key"
