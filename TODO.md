@@ -23,7 +23,6 @@ Categories=Utility;
 - https://github.com/chjj/compton/issues/197
 - https://ask.fedoraproject.org/t/really-long-boot-time/3242
 - Prevent login screen from showing up on cursor screen, rather stay on main display
-- Bind Win + L to xflock4
 - Make checkboxes checkboxes again (not radios!) - seems like Orchis doesn't agree
 - Adopt a common comment standard of capitalization and spacing
 - Make all modules and install.sh fully idempotent
