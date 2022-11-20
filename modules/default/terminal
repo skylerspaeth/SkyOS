@@ -10,8 +10,8 @@ mkdir -p "$HOME/.config/xfce4/terminal"
 
 XFTERM_RC="$_/terminalrc"
 
-#ensure the file exists
-touch "$XFTERM_RC"
+#ensure the file exists and has the necessary header
+[[ -f $XFTERM_RC ]] || echo "[Configuration]" > $XFTERM_RC
 
 #first check if MiscMenubarDefault key exists and create it if not. then set the value
 grep '^MiscMenubarDefault=' $XFTERM_RC > /dev/null || echo "MiscMenubarDefault=" >> $XFTERM_RC
