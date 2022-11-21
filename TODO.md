@@ -4,7 +4,6 @@
 - Preinstall apps, drivers, and tools
   - Allow option to skip these
   - Try to autodetect but prompt to confirm for video driver type
-  - Add default zshrc and optional vimrc
   - goregion
   - Kraken RGB Driver
   - Lossless Cut:
