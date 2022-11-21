@@ -19,6 +19,9 @@ xfconf-query -c xfwm4 -p /general/workspace_count -s 1
 # disable scrollwheel shade
 xfconf-query -c xfwm4 -p /general/mousewheel_rollup -s false
 
+# disable overwhelming blue tint when alt+tabbing through windows
+xfconf-query -c xfwm4 -p /general/cycle_draw_frame -s false
+
 # fix hideously large desktop icon tooltips
 xfconf-query -c xfce4-desktop -p /desktop-icons/tooltip-size -n -t int -s 40
 
