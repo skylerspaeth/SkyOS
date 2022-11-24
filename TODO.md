@@ -48,10 +48,10 @@ Categories=Utility;
   - Could do this based off whether battery is present
   - Or: `dmidecode --string chassis-type`
   - From https://superuser.com/questions/877677/programatically-determine-if-an-script-is-being-executed-on-laptop-or-desktop
+  - May be able to just push this using xfconf-query
 - Fix settings icon in start menu, it looks bad, probably replace it with another icon. Can use GTK CSS IIRC
 - Fix Steam and Discord icons. Both also look awful in Kora
 - Add full module list and descriptions to either README or dedicated modules.md file
-- Disable the super bright and kind of annoying alt-tab blue background
 - Add SkyOS-colored logo to neofetch to please Thoth
 - Use kickstart files and automate ISO build process with Jenkins
   - https://pagure.io/fedora-kickstarts/blob/main/f/fedora-live-xfce.ks
@@ -59,6 +59,6 @@ Categories=Utility;
   - https://pagure.io/fedora-kickstarts/tree/main
   - https://docs.fedoraproject.org/en-US/remix-building/remix-ci/
   - https://fedoraproject.org/wiki/Remix#How\_do\_I\_remix\_Fedora?
-- Create firefox module and remove all pocket BS from it
+- Remove all pocket BS from firefox module
   - Configure homepage to be clean and tile-less while doing above
 - A little can be done to theme the calendar panel applet: https://forum.xfce.org/viewtopic.php?id=14922
