@@ -28,3 +28,9 @@ xfconf-query -c xfce4-desktop -p /desktop-icons/tooltip-size -n -t int -s 40
 # setup picom
 sudo dnf install -y picom
 mkdir -p $HOME/.config && cp res/desktop/picom.conf "$_"
+
+# disable xfwm compositor
+xfconf-query -c xfwm4 -p /general/use_compositing -t bool -s false
+
+# start picom in the background
+picom &
