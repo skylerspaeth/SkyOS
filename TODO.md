@@ -63,3 +63,4 @@ Categories=Utility;
 - Remove all pocket BS from firefox module
   - Configure homepage to be clean and tile-less while doing above
 - A little can be done to theme the calendar panel applet: https://forum.xfce.org/viewtopic.php?id=14922
+- Add cider (Apple music) module
