@@ -27,7 +27,7 @@ rm -rf kora/
 # Remove a few kora icons that don't fit SkyOS
 # Making GTK use each app's included icon
 KORA_PATH="/usr/share/icons/kora"
-BAD_ICONS="minecraft discord steam spotify spotify-client"
+BAD_ICONS="minecraft discord com.discordapp.Discord steam spotify spotify-client"
 cd $KORA_PATH/apps/scalable/
 sudo rm -f ${BAD_ICONS// /.svg }.svg
 
