@@ -6,8 +6,9 @@
     <em>Fedora post-install script to build a familiar, Windows-like desktop experience using free software.</em>
 </p>
 <p align="center">
-    <img src="https://img.shields.io/github/v/release/skylerspaeth/skyos?include_prereleases&color=%4a07b0" alt="Test">
-    <img src="https://img.shields.io/badge/platform-fedora--36%20%7C%20fedora--37-4a07b0" alt="Supported OS/Architectures">
+    <img src="https://img.shields.io/github/v/release/skylerspaeth/skyos?include_prereleases&color=%4a07b0" alt="Release version">
+    <img src="https://img.shields.io/badge/name-Hibiscus-4a07b0" alt="Release name">
+    <img src="https://img.shields.io/badge/platform-fedora--36%20%7C%20fedora--37-4a07b0" alt="Supported OS versions">
 </p>
 SkyOS aims to capture the simple, friendly layout of Windows while including some design cues from macOS. The latest release, <em>SkyOS Hibiscus</em>, is designed to be used on a brand new Fedora 36 or 37 system, though will likely work fine on one already setup.
 
