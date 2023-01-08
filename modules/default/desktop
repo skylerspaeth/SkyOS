@@ -43,4 +43,4 @@ pwait() {
 # (re)start picom in the background
 pwait picom && picom &
 
-echo "The compositor has been restarted. Graphical bugs should be fixed by logout/reboot."
+echo "The compositor has been (re)started. Graphical bugs should be fixed by logout/reboot."
