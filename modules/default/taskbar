@@ -8,7 +8,7 @@ fi
 sudo dnf install -y xfce4-whiskermenu-plugin xfce4-docklike-plugin xfce4-panel-profiles xfce4-volumed xfce4-pulseaudio-plugin
 
 TBAR=skyos-taskbar
-TBAR_CFG=res/taskbar/$TBAR.cfg
+TBAR_CFG=$SKYOS_REPO_PATH/res/taskbar/$TBAR.cfg
 
 # install gtk override stylesheet
 mkdir -p $HOME/.config/gtk-3.0 && cp res/taskbar/gtk.css "$_"

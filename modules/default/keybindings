@@ -17,7 +17,7 @@ ksuperkey
 
 # ensure the superkey behavior persists on reboot
 mkdir -p ~/.config/autostart
-cp res/keybindings/superkey.desktop $_
+cp $SKYOS_REPO_PATH/res/keybindings/superkey.desktop $_
 
 xfconf-query -c xfce4-keyboard-shortcuts -p "/commands/custom/<Alt>F1" -t string -n -s "xfce4-popup-whiskermenu"
 

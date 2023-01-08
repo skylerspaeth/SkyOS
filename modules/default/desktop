@@ -27,10 +27,20 @@ xfconf-query -c xfce4-desktop -p /desktop-icons/tooltip-size -n -t int -s 40
 
 # setup picom
 sudo dnf install -y picom
-mkdir -p $HOME/.config && cp res/desktop/picom.conf "$_"
+mkdir -p $HOME/.config && cp $SKYOS_REPO_PATH/res/desktop/picom.conf "$_"
 
 # disable xfwm compositor
 xfconf-query -c xfwm4 -p /general/use_compositing -t bool -s false
 
-# start picom in the background
-picom &
+# kill & wait for process to close
+pwait() {
+  PID=$(pgrep $1) && kill $PID
+  while kill -0 $PID; do
+    sleep 0.5;
+  done 2> /dev/null
+}
+
+# (re)start picom in the background
+pwait picom && picom &
+
+echo "The compositor has been restarted. Graphical bugs should be fixed by logout/reboot."

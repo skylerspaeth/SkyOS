@@ -14,4 +14,4 @@ xfconf-query -c xfce4-session -p /general/SaveOnExit -n -t bool -s false
 rm -rf ~/.cache/sessions/*
 
 # autostart obs studio
-cp res/obs/obs-replay-buffer.desktop ~/.config/autostart/
+cp $SKYOS_REPO_PATH/res/obs/obs-replay-buffer.desktop ~/.config/autostart/
