@@ -32,7 +32,7 @@ cd $KORA_PATH/apps/scalable/
 sudo rm -f ${BAD_ICONS// /.svg }.svg
 
 # Override included icons with custom ones
-cp res/icons/* $KORA_PATH/apps/scalable/
+sudo cp $SKYOS_REPO_PATH/res/icons/* $KORA_PATH/apps/scalable/
 
 # Rebuild icon cache so removed icons don't show as missing
 cd $KORA_PATH/
