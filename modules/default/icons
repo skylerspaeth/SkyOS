@@ -24,7 +24,17 @@ git clone https://github.com/bikass/kora.git && cd kora/
 sudo cp -r kora/ /usr/share/icons/
 rm -rf kora/
 
+# Remove a few kora icons that don't fit SkyOS
+# Making GTK use each app's included icon
+KORA_PATH="/usr/share/icons/kora"
+BAD_ICONS="minecraft discord steam spotify spotify-client"
+cd $KORA_PATH/apps/scalable/
+sudo rm ${BAD_ICONS// /.svg }.svg
+
+# Rebuild icon cache so removed icons don't show as missing
+cd $KORA_PATH/
+sudo bash create-new-icon-theme.cache.sh
+
 xfconf-query -c xsettings -p /Net/IconThemeName -s kora
 
-# use default steam logo instead of kora
 # use same style session menu icons (SU is wrong)
