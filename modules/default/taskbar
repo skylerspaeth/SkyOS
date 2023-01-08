@@ -5,7 +5,7 @@ if ! [[ $SHLVL -gt 2 ]]; then
   exit 1
 fi
 
-sudo dnf install -y xfce4-whiskermenu-plugin xfce4-docklike-plugin xfce4-panel-profiles
+sudo dnf install -y xfce4-whiskermenu-plugin xfce4-docklike-plugin xfce4-panel-profiles xfce4-volumed xfce4-pulseaudio-plugin
 
 TBAR=skyos-taskbar
 TBAR_CFG=res/taskbar/$TBAR.cfg

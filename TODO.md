@@ -1,6 +1,5 @@
 # To-do list
 - rpmfusion module must run before other optionals, and optionals must check if their needed fusion repo is enabled
-- Install `sudo dnf install xfce4-volumed` to get GMMK Pro volume knob working out of box (more info here: https://forum.xfce.org/viewtopic.php?id=10948)
 - Use custom LightDM WebKit Greeter
 - Preinstall apps, drivers, and tools
   - Allow option to skip these
