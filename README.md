@@ -6,7 +6,6 @@ The latest release, SkyOS Hibiscus, is designed to be used on a brand new Fedora
 ## Modules
 Modules in the `default` directory will all be installed automatically, while you'll be asked about each in `optional`. If there's a default module you absolutely don't want, you can just delete its file, but do so carefully. You may break another module's dependency.
 
-List of modules:
 | Type | Name | Description |
 | --- | --- | --- |
 | default/ | desktop | Desktop environment customizations |
