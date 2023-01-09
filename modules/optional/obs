@@ -5,6 +5,9 @@ if ! [[ $SHLVL -gt 2 ]]; then
   exit 1
 fi
 
+# Ensure RPM Fusion free is enabled
+enable-fusion free $0
+
 sudo dnf install -y obs-studio
 
 # disable xfce session saving to allow obs autostart

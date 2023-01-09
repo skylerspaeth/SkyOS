@@ -66,11 +66,11 @@ export -f gclonecd
 enable-fusion() {
   case $1 in
     free)
-      echo "Enabling RPM Fusion free repos (needed for $2 module)"
+      echo "Enabling RPM Fusion free repos (needed for $(basename "$2") module)"
       sudo dnf install -y https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
       ;;
     nonfree | non-free)
-      echo "Enabling RPM Fusion non-free repos (needed for $2 module)"
+      echo "Enabling RPM Fusion non-free repos (needed for $(basename "$2") module)"
       sudo dnf install -y https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
       ;;
     *)

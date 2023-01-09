@@ -5,8 +5,7 @@ if ! [[ $SHLVL -gt 2 ]]; then
   exit 1
 fi
 
-# ensure rpm fusion nonfree is enabled
-SCRIPT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &> /dev/null && pwd)
-$SCRIPT_DIR/rpmfusion
+# Ensure RPM Fusion non-free is enabled
+enable-fusion nonfree $0
 
 sudo dnf install -y steam
