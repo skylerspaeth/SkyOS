@@ -81,16 +81,16 @@ export -f enable-fusion
 enable-flathub() { flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo; }
 export -f enable-flathub
 
-blueprint() { echo -ne "\n\u001b[38;5;38m$1\e[0m:"; }
+blueprint() { echo -ne "\n\u001b[38;5;38m$1\e[0m$2"; }
 
 for MODULE in $(find modules/default/ -type f ! -name '*.swp'); do
-  blueprint "$MODULE\n"
+  blueprint "$MODULE" ':\n'
   bash -e "$MODULE" || { echo "$MODULE failed, halting."; break; }
 done
 
 for MODULE in $(find modules/optional/ -type f ! -name '*.swp'); do
   if [ "$FULL_INSTALL" == true ]; then
-    blueprint "$MODULE\n"
+    blueprint "$MODULE" ':\n'
     bash -e "$MODULE" || { echo "$MODULE failed, halting."; break; }
   else 
     blueprint "$MODULE"
