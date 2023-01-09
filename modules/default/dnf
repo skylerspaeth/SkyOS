@@ -9,4 +9,5 @@ fi
 CONF_PATH=/etc/dnf/dnf.conf
 TEXT='defaultyes=True'
 
-grep -Fqx "$TEXT" $CONF_PATH || echo "$TEXT" | sudo tee -a $CONF_PATH
+grep -Fqx "$TEXT" $CONF_PATH || echo "$TEXT" | sudo tee -a $CONF_PATH > /dev/null
+echo "Yes is now default for dnf package installs."
