@@ -5,7 +5,12 @@ if ! [[ $SHLVL -gt 2 ]]; then
   exit 1
 fi
 
-# install RPM Fusion free repo
-sudo dnf install -y https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
-# install RPM Fusion nonfree repo
-sudo dnf install -y https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+read -p "Enable fusion free? [Y/n]: " RUN; RUN="${RUN:=Y}"
+if [ "${RUN^^}" == "Y" ]; then
+  enable-fusion free $0
+fi
+
+read -p "Enable fusion non-free? [Y/n]: " RUN; RUN="${RUN:=Y}"
+if [ "${RUN^^}" == "Y" ]; then
+  enable-fusion nonfree $0
+fi

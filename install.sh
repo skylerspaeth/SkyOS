@@ -63,6 +63,23 @@ gclonecd() {
 }
 export -f gclonecd
 
+enable-fusion() {
+  case $1 in
+    free)
+      echo "Enabling RPM Fusion free repos (needed for $2 module)"
+      sudo dnf install -y https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+      ;;
+    nonfree | non-free)
+      echo "Enabling RPM Fusion non-free repos (needed for $2 module)"
+      sudo dnf install -y https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+      ;;
+    *)
+      echo "Invalid $0 argument."
+      ;;
+  esac
+}
+export -f enable-fusion
+
 # ensure flathub is enabled for modules to get software from
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
