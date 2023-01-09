@@ -6,8 +6,9 @@ if ! [[ $SHLVL -gt 2 ]]; then
 fi
 
 KORA_INSTALL_PATH="/usr/share/icons/kora"
+cd $SKYOS_BUILD_PATH
 
-# Remote leftover directory if exists
+# Remove leftover directory if exists
 rm -rf kora/
 
 if [[ -d $KORA_INSTALL_PATH ]]; then
