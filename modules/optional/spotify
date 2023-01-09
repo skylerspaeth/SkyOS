@@ -5,4 +5,4 @@ if ! [[ $SHLVL -gt 2 ]]; then
   exit 1
 fi
 
-flatpak install -y --noninteractive flathub com.spotify.Client
+enable-flathub

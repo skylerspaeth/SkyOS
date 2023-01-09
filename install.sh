@@ -58,9 +58,7 @@ export SKYOS_BUILD_PATH=/tmp/skyos
 rm -rf $SKYOS_BUILD_PATH/*
 mkdir -p $SKYOS_BUILD_PATH/
 
-gclonecd() {
-  git clone "$1" && cd "$(basename "$1" .git)"
-}
+gclonecd() { git clone "$1" && cd "$(basename "$1" .git)"; }
 export -f gclonecd
 
 enable-fusion() {
@@ -80,18 +78,23 @@ enable-fusion() {
 }
 export -f enable-fusion
 
-# ensure flathub is enabled for modules to get software from
-flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+enable-flathub() { flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo; }
+export -f enable-flathub
+
+blueprint() { echo -ne "\n\u001b[38;5;38m$1\e[0m:"; }
 
 for MODULE in $(find modules/default/ -type f ! -name '*.swp'); do
+  blueprint "$MODULE\n"
   bash -e "$MODULE" || { echo "$MODULE failed, halting."; break; }
 done
 
 for MODULE in $(find modules/optional/ -type f ! -name '*.swp'); do
   if [ "$FULL_INSTALL" == true ]; then
+    blueprint "$MODULE\n"
     bash -e "$MODULE" || { echo "$MODULE failed, halting."; break; }
   else 
-    read -p "$MODULE? [Y/n]: " RUN; RUN="${RUN:=Y}"
+    blueprint "$MODULE"
+    read -p "? [Y/n]: " RUN; RUN="${RUN:=Y}"
     if [ "${RUN^^}" == "Y" ]; then
       bash -e "$MODULE" || { echo "$MODULE failed, halting."; break; }
     fi
