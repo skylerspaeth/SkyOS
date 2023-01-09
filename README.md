@@ -55,11 +55,11 @@ All non-free or proprietary software is marked as optional for those who only us
 | default/ | theme | Install Orchis, set as WM and DE theme |
 | default/ | vim | Vim configuration, color scheme |
 | default/ | wallpapers | Install wallpapers |
-| optional/ | discord | Install Discord |
-| optional/ | minecraft | Install Minecraft launcher |
+| optional/ | discord | Install Discord (requires flathub) |
+| optional/ | minecraft | Install Minecraft launcher (requires flathub) |
 | optional/ | obs | Install OBS (requires fusion free), setup replay buffer |
 | optional/ | rpmfusion | Enable free & non-free RPM Fusion repos |
-| optional/ | spotify | Install Spotify |
+| optional/ | spotify | Install Spotify (requires flathub) |
 | optional/ | steam | Install Steam (requires fusion non-free) |
 
 ## Contributing
