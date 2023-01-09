@@ -6,3 +6,4 @@ if ! [[ $SHLVL -gt 2 ]]; then
 fi
 
 enable-flathub
+flatpak install -y --noninteractive flathub com.discordapp.Discord
