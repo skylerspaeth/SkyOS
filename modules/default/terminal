@@ -9,3 +9,12 @@ fi
 mkdir -p "$HOME/.config/xfce4/terminal"
 
 cp $SKYOS_REPO_PATH/res/terminal/terminalrc "$_"
+
+# Setup neofetch
+sudo dnf install -y neofetch
+
+# Run neofetch into a void to generate config file's dir structure
+neofetch > /dev/null
+
+# Use SkyOS color scheme for neofetch logo instead of Fedora's default
+sed -i "s/^ascii_colors=\(.*\)$/ascii_colors=(93 7)/" $HOME/.config/neofetch/config.conf

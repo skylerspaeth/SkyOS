@@ -51,7 +51,7 @@ All non-free or proprietary software is marked as optional for those who only us
 | default/ | login | Configure login screen, profile picture |
 | default/ | shell | Install zsh, configure, use as default |
 | default/ | taskbar | Apply SkyOS taskbar layout |
-| default/ | terminal | XFCE Terminal configuration |
+| default/ | terminal | XFCE Terminal configuration, neofetch setup |
 | default/ | theme | Install Orchis, set as WM and DE theme |
 | default/ | vim | Vim configuration, color scheme |
 | default/ | wallpapers | Install wallpapers |
