@@ -18,3 +18,6 @@ neofetch > /dev/null
 
 # Use SkyOS color scheme for neofetch logo instead of Fedora's default
 sed -i "s/^ascii_colors=\(.*\)$/ascii_colors=(93 7)/" $HOME/.config/neofetch/config.conf
+
+# Use SkyOS color scheme for text instead of default
+sed -i "s/^colors=\(.*\)$/colors=(93 7)/" $HOME/.config/neofetch/config.conf
