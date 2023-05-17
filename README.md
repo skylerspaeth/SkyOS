@@ -56,6 +56,7 @@ All non-free or proprietary software is marked as optional for those who only us
 | default/ | vim | Vim configuration, color scheme |
 | default/ | wallpapers | Install wallpapers |
 | optional/ | discord | Install Discord (requires flathub) |
+| optional/ | liquidctl | Install RGB control for many devices, autostart Kraken config |
 | optional/ | minecraft | Install Minecraft launcher (requires flathub) |
 | optional/ | obs | Install OBS (requires fusion free), setup replay buffer |
 | optional/ | rpmfusion | Enable free & non-free RPM Fusion repos |
