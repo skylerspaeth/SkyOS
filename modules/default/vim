@@ -1,0 +1,19 @@
+#!/bin/bash
+
+if ! [[ $SHLVL -gt 2 ]]; then
+  echo "This script is not designed to be ran individually. Please run install.sh instead."
+  exit 1
+fi
+
+# Install vim
+sudo dnf install -y vim
+
+# Make a backup of current vimrc if present
+if [[ -f "$HOME/.vimrc" ]]; then
+  echo ".vimrc already exists, backing up to $HOME/.vimrc.skyosbkp"
+  mv $HOME/.vimrc $HOME/.vimrc.skyosbkp
+fi
+
+# Download SkyOS vimrc from DotFiles repo @ this version's tag
+(cd ~ && curl -O https://raw.githubusercontent.com/skylerspaeth/DotFiles/skyos-v$VERSION/.vimrc)
+(mkdir -p ~/.vim/colors && cd $_ && curl -O https://raw.githubusercontent.com/skylerspaeth/DotFiles/skyos-v$VERSION/.vim/colors/PaperColor.vim)

@@ -1,4 +1,10 @@
 #!/bin/bash
+
+if ! [[ $SHLVL -gt 2 ]]; then
+  echo "This script is not designed to be ran individually. Please run install.sh instead."
+  exit 1
+fi
+
 cd $SKYOS_BUILD_PATH
 
 sudo dnf -y install sassc

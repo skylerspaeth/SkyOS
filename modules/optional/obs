@@ -1,5 +1,13 @@
 #!/bin/bash
 
+if ! [[ $SHLVL -gt 2 ]]; then
+  echo "This script is not designed to be ran individually. Please run install.sh instead."
+  exit 1
+fi
+
+# Ensure RPM Fusion free is enabled
+enable-fusion free $0
+
 sudo dnf install -y obs-studio
 
 # disable xfce session saving to allow obs autostart
@@ -9,4 +17,4 @@ xfconf-query -c xfce4-session -p /general/SaveOnExit -n -t bool -s false
 rm -rf ~/.cache/sessions/*
 
 # autostart obs studio
-cp res/obs/obs-replay-buffer.desktop ~/.config/autostart/
+cp $SKYOS_REPO_PATH/res/obs/obs-replay-buffer.desktop ~/.config/autostart/

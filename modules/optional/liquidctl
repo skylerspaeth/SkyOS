@@ -1,0 +1,26 @@
+#!/bin/bash
+
+if ! [[ $SHLVL -gt 2 ]]; then
+  echo "This script is not designed to be ran individually. Please run install.sh instead."
+  exit 1
+fi
+
+sudo dnf install -y liquidctl
+
+SERVICE_PATH='/etc/systemd/system/liquidcfg.service'
+
+[[ ! -s "$SERVICE_PATH" ]] && sudo tee -a "$SERVICE_PATH" > /dev/null <<'EOF'
+[Unit]
+Description=AIO startup service
+
+[Service]
+Type=oneshot
+ExecStart=liquidctl --match kraken set sync color spectrum-wave
+
+[Install]
+WantedBy=default.target
+EOF
+
+sudo systemctl daemon-reload
+sudo systemctl start liquidcfg
+sudo systemctl enable liquidcfg

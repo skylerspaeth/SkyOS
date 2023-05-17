@@ -1,0 +1,21 @@
+#!/bin/bash
+
+if ! [[ $SHLVL -gt 2 ]]; then
+  echo "This script is not designed to be ran individually. Please run install.sh instead."
+  exit 1
+fi
+
+# Install and switch to zsh
+sudo dnf install -y zsh
+chsh -s $(which zsh)
+
+# Make a backup of current zshrc if present
+if [[ -f "$HOME/.zshrc" ]]; then
+  echo ".zshrc already exists, backing up to $HOME/.zshrc.skyosbkp"
+  mv $HOME/.zshrc $HOME/.zshrc.skyosbkp
+fi
+
+# Download SkyOS zshrc from DotFiles repo @ this version's tag
+(cd ~ && curl -O https://raw.githubusercontent.com/skylerspaeth/DotFiles/skyos-v$VERSION/.zshrc)
+
+echo "Shell will become default on next reboot"

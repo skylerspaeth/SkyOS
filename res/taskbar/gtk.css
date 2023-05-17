@@ -12,7 +12,7 @@
 #whiskermenu-window * {
   border: 0px rgba(50, 52, 61, 0.95) solid; /*All border*/
   outline: none;
-  overflow: auto;
+  /*overflow: auto;*/
 }
 #whiskermenu-window {
   background-color: rgba(50, 52, 61, 0.8) ; /*All window*/
@@ -38,15 +38,17 @@
 }
 
 #whiskermenu-window treeview {
-  background-color: rgba(50, 52, 61, 0.1); /*Box Color of application when click/Hover on category */
+  background-color: rgba(0, 0, 0, 0);
   color: #e6ebef; /*Text Color of application when click/Hover on category */
-  background-image: none;
-  outline-color: rgba(0, 0, 0, 0);
+  /*outline-color: rgba(0, 100, 0, 0.4);*/
+  border-radius: 8px;
+  padding: 3px;
 }
 
-#whiskermenu-window .frame:first-child {
-  background: rgba(50, 52, 61, 0); /*First Color Box of favorite/All applications*/
-  padding: 5px 5px 5px 5px;
+#whiskermenu-window .frame:first-child,
+#whiskermenu-window .frame:last-child {
+  background: rgba(0, 0, 0, 0.25); /*First Color Box of favorite/All applications*/
+  padding: 5px;
   border-radius: 8px;
 }
 
@@ -59,13 +61,19 @@
 #whiskermenu-window treeview:active,
 #whiskermenu-window treeview:focus
 {
-  background-color: #5294e2; /*Button Color click/Hover  */
+  /*background-color: rgba(0, 0, 0, 0.1);*/
+  /*background-color: #5294e2; */
+  /*Button Color click/Hover   */
   color: #ffffff; /*Text Button Color click/Hover  */
-  transition: 200ms;
-  
 }
 #whiskermenu-window button:active {
   background: #2679db; /*Button Color click-active  */
+}
+#whiskermenu-window button:hover {
+  background: rgba(0, 0, 0, 0.6); /*Button Color click-active  */
+}
+#whiskermenu-window treeview:hover {
+  background: rgba(0, 0, 0, 0.3); /*Button Color click-active  */
 }
 #whiskermenu-window treeview:focus {
   background: transparent;
@@ -76,16 +84,21 @@
 }
 #whiskermenu-window iconview:hover{
   background: rgba(50, 52, 61, 0.25);
-  border: 1px rgba(255, 255, 255, 0.25) solid;
+  /*border: 1px rgba(255, 255, 255, 0.25) solid;*/
 }
 
-#whiskermenu-window iconview{
+#whiskermenu-window iconview {
   background: transparent;
   border-radius: 10px;
 }
 
 #whiskermenu-window iconview {
   color: #ffffff; /*text color when icon view mode*/
+}
+
+#whiskermenu-window .profile-picture {
+  margin-top: 2px;
+  margin-bottom: 2px;
 }
 
 /*Docklike Plugin*/
@@ -95,4 +108,8 @@
 #docklike-plugin button {
   min-height: 38px;
   min-width: 38px;
+}
+
+#showdesktop-8 image {
+  opacity: 0;
 }

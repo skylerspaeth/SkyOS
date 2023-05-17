@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if ! [[ $SHLVL -gt 2 ]]; then
+  echo "This script is not designed to be ran individually. Please run install.sh instead."
+  exit 1
+fi
+
 # OPTIMALLY THIS SCRIPT SHOULD BE RUN BEFORE WALLPAPERS, BEAR IN MIND ALPHABETICALLY
 
 # tell xfconf to arrange the titlebar buttons in the right order
@@ -13,3 +18,29 @@ xfconf-query -c xfwm4 -p /general/workspace_count -s 1
 
 # disable scrollwheel shade
 xfconf-query -c xfwm4 -p /general/mousewheel_rollup -s false
+
+# disable overwhelming blue tint when alt+tabbing through windows
+xfconf-query -c xfwm4 -p /general/cycle_draw_frame -s false
+
+# fix hideously large desktop icon tooltips
+xfconf-query -c xfce4-desktop -p /desktop-icons/tooltip-size -n -t int -s 40
+
+# setup picom
+sudo dnf install -y picom
+mkdir -p $HOME/.config && cp $SKYOS_REPO_PATH/res/desktop/picom.conf "$_"
+
+# disable xfwm compositor
+xfconf-query -c xfwm4 -p /general/use_compositing -t bool -s false
+
+# kill & wait for process to close
+pwait() {
+  PID=$(pgrep $1) && kill $PID
+  while kill -0 $PID; do
+    sleep 0.5;
+  done 2> /dev/null
+}
+
+# (re)start picom in the background
+pwait picom && picom &
+
+echo "The compositor has been (re)started. Graphical bugs should be fixed by logout/reboot."

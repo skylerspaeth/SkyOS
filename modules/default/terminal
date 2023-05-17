@@ -1,18 +1,23 @@
 #!/bin/bash
 
-#terminalrc location as a variable to eliminate repetition
-XFTERM_RC="$HOME/.config/xfce4/terminal/terminalrc"
+if ! [[ $SHLVL -gt 2 ]]; then
+  echo "This script is not designed to be ran individually. Please run install.sh instead."
+  exit 1
+fi
 
-#ensure the file exists
-touch $XFTERM_RC
+#ensure the directory exists
+mkdir -p "$HOME/.config/xfce4/terminal"
 
-#update the xfce terminal configuration file to prevent menu bar from showing on new terminals
-sed -i "/MiscMenubarDefault=TRUE/c\MiscMenubarDefault=FALSE" $XFTERM_RC
+cp $SKYOS_REPO_PATH/res/terminal/terminalrc "$_"
 
-#first check if BackgroundMode key exists and create it if not. then set the value
-grep '^BackgroundMode=/*' $XFTERM_RC > /dev/null || echo "BackgroundMode=" >> $XFTERM_RC
-sed -i "/BackgroundMode=/c\BackgroundMode=TERMINAL_BACKGROUND_TRANSPARENT" $XFTERM_RC
+# Setup neofetch
+sudo dnf install -y neofetch
 
-#do the same but for BackgroundDarkness
-grep '^BackgroundDarkness=/*' $XFTERM_RC > /dev/null || echo "BackgroundDarkness=" >> $XFTERM_RC
-sed -i "/BackgroundDarkness=/c\BackgroundDarkness=0.95" $XFTERM_RC
+# Run neofetch into a void to generate config file's dir structure
+neofetch > /dev/null
+
+# Use SkyOS color scheme for neofetch logo instead of Fedora's default
+sed -i "s/^ascii_colors=\(.*\)$/ascii_colors=(93 7)/" $HOME/.config/neofetch/config.conf
+
+# Use SkyOS color scheme for text instead of default
+sed -i "s/^colors=\(.*\)$/colors=(93 7)/" $HOME/.config/neofetch/config.conf

@@ -1,9 +1,44 @@
 #!/bin/bash
 
+if ! [[ $SHLVL -gt 2 ]]; then
+  echo "This script is not designed to be ran individually. Please run install.sh instead."
+  exit 1
+fi
+
+KORA_INSTALL_PATH="/usr/share/icons/kora"
+cd $SKYOS_BUILD_PATH
+
+# Remove leftover directory if exists
+rm -rf kora/
+
+if [[ -d $KORA_INSTALL_PATH ]]; then
+  QUESTION="Kora already installed. Overwrite, removing custom icons?"
+  read -p "$QUESTION [Y/n]: " OW; OW="${OW:=Y}"
+  if [[ "${OW^^}" == "N" ]]; then
+    echo "Ok, skipping Kora module..."
+    exit 0
+  fi
+fi
+
+sudo rm -rf $KORA_INSTALL_PATH
 git clone https://github.com/bikass/kora.git && cd kora/
 sudo cp -r kora/ /usr/share/icons/
+rm -rf kora/
+
+# Remove a few kora icons that don't fit SkyOS
+# Making GTK use each app's included icon
+KORA_PATH="/usr/share/icons/kora"
+BAD_ICONS="minecraft discord com.discordapp.Discord steam spotify spotify-client"
+cd $KORA_PATH/apps/scalable/
+sudo rm -f ${BAD_ICONS// /.svg }.svg
+
+# Override included icons with custom ones
+sudo cp $SKYOS_REPO_PATH/res/icons/* $KORA_PATH/apps/scalable/
+
+# Rebuild icon cache so removed icons don't show as missing
+cd $KORA_PATH/
+sudo bash create-new-icon-theme.cache.sh
 
 xfconf-query -c xsettings -p /Net/IconThemeName -s kora
 
-# use default steam logo instead of kora
 # use same style session menu icons (SU is wrong)

@@ -1,17 +1,31 @@
 #!/bin/bash
 
+if ! [[ $SHLVL -gt 2 ]]; then
+  echo "This script is not designed to be ran individually. Please run install.sh instead."
+  exit 1
+fi
+
 # allow multiple shortcuts to use super key
 sudo dnf -y install git gcc make libX11-devel libXtst-devel pkgconfig
 gclonecd https://github.com/hanschen/ksuperkey.git
 make
 sudo make install && cd ..
+rm -rf ksuperkey/
+
+# start superkey for this session
+ksuperkey
 
 # ensure the superkey behavior persists on reboot
-cp res/keybindings/superkey.desktop ~/.config/autostart
+mkdir -p ~/.config/autostart
+cp $SKYOS_REPO_PATH/res/keybindings/superkey.desktop $_
+
 xfconf-query -c xfce4-keyboard-shortcuts -p "/commands/custom/<Alt>F1" -t string -n -s "xfce4-popup-whiskermenu"
 
 # gnome-like terminal shortcut
 xfconf-query -c xfce4-keyboard-shortcuts -p "/commands/custom/<Primary><Alt>t" -t string -n -s "xfce4-terminal"
+
+# windows-like super + L lock
+xfconf-query -c xfce4-keyboard-shortcuts -p "/commands/custom/<Super>l" -t string -n -s "xflock4"
 
 # windows-like window snapping
 xfconf-query -c xfce4-keyboard-shortcuts -p "/xfwm4/custom/<Shift><Super>Up" -t string -n -s "tile_up_key"

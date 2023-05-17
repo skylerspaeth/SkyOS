@@ -1,7 +1,11 @@
 #!/bin/bash
 
-# ensure rpm fusion nonfree is enabled
-SCRIPT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &> /dev/null && pwd)
-$SCRIPT_DIR/rpmfusion
+if ! [[ $SHLVL -gt 2 ]]; then
+  echo "This script is not designed to be ran individually. Please run install.sh instead."
+  exit 1
+fi
+
+# Ensure RPM Fusion non-free is enabled
+enable-fusion nonfree $0
 
 sudo dnf install -y steam
