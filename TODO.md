@@ -50,3 +50,5 @@ Categories=Utility;
   - Configure homepage to be clean and tile-less while doing above
 - A little can be done to theme the calendar panel applet: https://forum.xfce.org/viewtopic.php?id=14922
 - Add cider (Apple music) module
+- Use some nature or abstract wallpapers from the following website: https://zebreus.github.io/all-gnome-backgrounds
+  - I'm especially fond of the "Swoosh" and "Amber" collections
