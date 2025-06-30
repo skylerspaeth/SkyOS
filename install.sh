@@ -78,7 +78,7 @@ enable-fusion() {
 }
 export -f enable-fusion
 
-enable-flathub() { flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo; }
+enable-flathub() { sudo dnf install -y flatpak && flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo; }
 export -f enable-flathub
 
 blueprint() { echo -ne "\n\u001b[38;5;38m$1\e[0m$2"; }
