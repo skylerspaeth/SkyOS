@@ -18,7 +18,7 @@ INSTALL_HELP()
   echo "Syntax: ./$SCRIPT_NAME [-h|-f|-v|-V]"
   echo "Options:"
   echo "  -h    Display this help message"
-  echo "  -f    Non-interactive, install all default and options"
+  echo "  -f    Non-interactive, install everything, incl. all optionals (full install mode)"
   echo "  -v    Display version info and release date"
   echo "  -V    Verbose mode, display each script's name"
   echo
@@ -85,18 +85,18 @@ blueprint() { echo -ne "\n\u001b[38;5;38m$1\e[0m$2"; }
 
 for MODULE in $(find modules/default/ -type f ! -name '*.swp'); do
   blueprint "$MODULE" ':\n'
-  bash -e "$MODULE" || { echo "$MODULE failed, halting."; break; }
+  bash -e "$MODULE" || { echo "$MODULE failed, halting."; exit 1; }
 done
 
 for MODULE in $(find modules/optional/ -type f ! -name '*.swp'); do
   if [ "$FULL_INSTALL" == true ]; then
     blueprint "$MODULE" ':\n'
-    bash -e "$MODULE" || { echo "$MODULE failed, halting."; break; }
+    bash -e "$MODULE" || { echo "$MODULE failed, halting."; exit 1; }
   else 
     blueprint "$MODULE"
     read -p "? [Y/n]: " RUN; RUN="${RUN:=Y}"
     if [ "${RUN^^}" == "Y" ]; then
-      bash -e "$MODULE" || { echo "$MODULE failed, halting."; break; }
+      bash -e "$MODULE" || { echo "$MODULE failed, halting."; exit 1; }
     fi
   fi
 done
