@@ -5,19 +5,18 @@ if ! [[ $SHLVL -gt 2 ]]; then
   exit 1
 fi
 
-#ensure the directory exists
+# Ensure the terminal config directory exists
 mkdir -p "$HOME/.config/xfce4/terminal"
 
+# Copy terminalrc into that directory
 cp $SKYOS_REPO_PATH/res/terminal/terminalrc "$_"
 
-# Setup neofetch
-sudo dnf install -y neofetch
 
-# Run neofetch into a void to generate config file's dir structure
-neofetch > /dev/null
+# Install fastfetch
+sudo dnf install -y fastfetch
 
-# Use SkyOS color scheme for neofetch logo instead of Fedora's default
-sed -i "s/^ascii_colors=\(.*\)$/ascii_colors=(93 7)/" $HOME/.config/neofetch/config.conf
+# Ensure the fastfetch config directory exists
+mkdir -p "$HOME/.config/fastfetch"
 
-# Use SkyOS color scheme for text instead of default
-sed -i "s/^colors=\(.*\)$/colors=(93 7)/" $HOME/.config/neofetch/config.conf
+# Copy fastfetch config into that directory
+cp $SKYOS_REPO_PATH/res/terminal/config.jsonc "$_"
