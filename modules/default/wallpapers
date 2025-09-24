@@ -6,12 +6,10 @@ if ! [[ $SHLVL -gt 2 ]]; then
 fi
 
 # install wallpapers to global directory
-BG_PATH=/usr/share/backgrounds/SkyOS
-sudo mkdir -p $BG_PATH
-sudo cp $SKYOS_REPO_PATH/res/wallpapers/* $BG_PATH
+BG_PATH=/usr/share/backgrounds/images
 
-# set default xfce wallpaper
-BG_DEFAULT="$BG_PATH/abstract-evening.png"
-xfconf-query --channel xfce4-desktop --list | grep -e '^/backdrop/screen.*/last-image$' | while read PROP_PATH; do
-  xfconf-query --channel xfce4-desktop --property $PROP_PATH --set $BG_DEFAULT
-done
+# clear out default fedora wallpapers
+sudo rm -rf $BG_PATH/* /usr/share/backgrounds/$(cat /etc/os-release | grep '^VERSION_ID=' | cut -f2 -d=)
+
+# copy custom SkyOS wallpapers into the default wallpaper path
+sudo cp $SKYOS_REPO_PATH/res/wallpapers/* $BG_PATH
